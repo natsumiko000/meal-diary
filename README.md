@@ -18,4 +18,4 @@
 ## 設計書
 
 ### 機能一覧
-https://docs.google.com/spreadsheets/d/1jU6Cze5Z867BkGOrU-LJgn1m2vyoR1ubdv_vUol85MI/edit?usp=sharing# meal-diary
+https://docs.google.com/spreadsheets/d/1jU6Cze5Z867BkGOrU-LJgn1m2vyoR1ubdv_vUol85MI/edit?usp=sharing#
