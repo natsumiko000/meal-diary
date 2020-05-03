@@ -7,7 +7,7 @@ class Init < ActiveRecord::Migration[5.2]
 			t.string :l_image_id,                   null: false
 			t.string :d_image_id,                   null: false
 			t.integer :weight,                      null: false
-			t.integer :status,                      null: false
+			t.integer :status,                      null: false, default: 0
 			t.timestamps
 		end
 
