@@ -1,0 +1,9 @@
+= form_for @diary_category do |f|
+  - if @diary_category.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@diary_category.errors.count, "error")} prohibited this diary_category from being saved:"
+      ul
+        - @diary_category.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit

@@ -1,0 +1,19 @@
+h1 Listing diary_categories
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @diary_categories.each do |diary_category|
+      tr
+        td = link_to 'Show', diary_category
+        td = link_to 'Edit', edit_diary_category_path(diary_category)
+        td = link_to 'Destroy', diary_category, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Diary category', new_diary_category_path
