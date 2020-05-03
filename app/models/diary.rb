@@ -1,5 +1,6 @@
 class Diary < ApplicationRecord
 	belongs_to :user
+	has_many :diary_categories
 	has_many :categories, through: :diary_categories
 	has_many :diary_comments, dependent: :destroy
 
