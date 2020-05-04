@@ -17,6 +17,9 @@ class DiariesController < ApplicationController
     @diary = Diary.new
   end
 
+  def data
+    end
+
   # GET /diaries/1/edit
   def edit
   end

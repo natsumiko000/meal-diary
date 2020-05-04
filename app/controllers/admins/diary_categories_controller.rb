@@ -1,4 +1,4 @@
-class Admin::DiaryCategoriesController < Admin::BaseController
+class Admins::DiaryCategoriesController < Admin::BaseController
   before_action :set_diary_category, only: [:show, :edit, :update, :destroy]
 
   # GET /diary_categories

@@ -1,4 +1,4 @@
-class Admin::DiaryCommentsController < Admin::BaseController
+class Admins::DiaryCommentsController < Admin::BaseController
   before_action :set_diary_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /diary_comments
