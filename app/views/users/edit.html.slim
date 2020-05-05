@@ -1,1 +1,13 @@
-h1 会員情報編集
+h3 User Info
+
+= form_for(@user) do |f| 
+    #form-group
+        = f.label :Name
+        #form-control
+        	= f.text_field :name
+    #form-group
+        = f.label :Introduction
+        #form-control
+        	= f.text_area :introduction
+    .form-group
+        	= f.submit 'Update User'
