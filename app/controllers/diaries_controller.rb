@@ -14,11 +14,11 @@ class DiariesController < ApplicationController
 
   # GET /diaries/new
   def new
-    @diary = Diary.new
+    @diary = current_user.diaries.new(date: Date.today)
   end
 
   def data
-    end
+  end
 
   # GET /diaries/1/edit
   def edit
@@ -27,9 +27,10 @@ class DiariesController < ApplicationController
   # POST /diaries
   # POST /diaries.json
   def create
-    @diary = Diary.new(diary_params)
+    @diary = current_user.diaries.new(diary_params)
 
     respond_to do |format|
+      binding.pry
       if @diary.save
         format.html { redirect_to @diary, notice: 'Diary was successfully created.' }
         format.json { render :show, status: :created, location: @diary }
@@ -72,6 +73,6 @@ class DiariesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def diary_params
-      params.fetch(:diary, {})
+      params.require(:diary).permit(:user_id, :b_image, :l_image, :d_image, :date, :weight, category_ids: [])
     end
 end

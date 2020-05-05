@@ -29,6 +29,7 @@ gem 'chart-js-rails', '~> 0.1.4'
 gem 'kaminari'
 gem 'i18n'
 gem 'enum_help'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

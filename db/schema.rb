@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_080553) do
+ActiveRecord::Schema.define(version: 2020_05_05_123647) do
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,20 +47,14 @@ ActiveRecord::Schema.define(version: 2020_05_04_080553) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
-    t.string "name_en", null: false
-    t.integer "food_id", null: false
-    t.string "image_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "diaries", force: :cascade do |t|
-    t.integer "event_id", null: false
+    t.integer "user_id", null: false
     t.integer "status", default: 0, null: false
     t.date "date", null: false
-    t.string "b_image_id"
-    t.string "l_image_id"
-    t.string "d_image_id"
     t.float "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,7 +86,6 @@ ActiveRecord::Schema.define(version: 2020_05_04_080553) do
     t.string "name", null: false
     t.text "caption", null: false
     t.integer "category_id", null: false
-    t.string "image_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

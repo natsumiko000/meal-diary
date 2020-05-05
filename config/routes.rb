@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 	end
 	resources :foods, only: [:index, :show]
 	resources :diary_categories
-	resources :diaries, only: [:show, :edit, :update, :destroy] do
+	resources :diaries do
 		member do
 			get 'data'
 		end
