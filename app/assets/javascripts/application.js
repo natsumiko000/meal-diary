@@ -21,3 +21,24 @@
 //= require moment
 //= require fullcalendar
 //= require rails-ujs
+//= require turbolinks
+//
+
+$(function () {
+    function eventCalendar() {
+        return $('#calendar').fullCalendar({
+			dayClick: function(date, jsEvent, view) {
+			    $(".fc-day[data-date=" + date.format("YYYY-MM-DD") + "]").css("background-color", "red"); //make the selected day have a red background
+				window.location.href = '/';
+			}
+        });
+    };
+    function clearCalendar() {
+        $('#calendar').html('');
+    };
+    $(document).on('turbolinks:load', function () {
+	    eventCalendar();
+    });
+});
+
+

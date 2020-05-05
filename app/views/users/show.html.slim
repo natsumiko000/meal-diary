@@ -1,1 +1,17 @@
-h1 マイページ
+h3 マイページ
+br
+h3 User Info
+	table
+        thead
+         	tr
+            	th Name
+            	td = @user.name
+        tbody
+          	tr
+            	th Introduction
+            	td = @user.introduction
+br
+p = link_to '編集', edit_user_path(@user)
+br
+
+#calendar
