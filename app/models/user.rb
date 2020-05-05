@@ -6,6 +6,10 @@ class User < ApplicationRecord
   validates :name, length: {maximum: 10, minimum: 2}
   validates :introduction, length: { maximum: 20 }
 
+  has_many :events, dependent: :destroy
+  has_many :diaries, dependent: :destroy
+  has_many :diary_comments, dependent: :destroy
+
 	enum status: {active:0, inactive:1}
 
 	# 物理削除の代わりにユーザーの`deleted_at`をタイムスタンプで更新

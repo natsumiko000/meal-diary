@@ -34,13 +34,13 @@ ActiveRecord::Schema.define(version: 2020_05_04_080553) do
   end
 
   create_table "diaries", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "category_id", null: false
-    t.string "b_image_id", null: false
-    t.string "l_image_id", null: false
-    t.string "d_image_id", null: false
-    t.integer "weight", null: false
+    t.integer "event_id", null: false
     t.integer "status", default: 0, null: false
+    t.date "date", null: false
+    t.string "b_image_id"
+    t.string "l_image_id"
+    t.string "d_image_id"
+    t.float "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -60,6 +60,13 @@ ActiveRecord::Schema.define(version: 2020_05_04_080553) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "diary_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "foods", force: :cascade do |t|
     t.string "name", null: false
     t.text "caption", null: false
@@ -71,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_080553) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
+    t.text "introduction"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.integer "status", default: 0, null: false
