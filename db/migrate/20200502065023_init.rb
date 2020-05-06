@@ -26,7 +26,7 @@ class Init < ActiveRecord::Migration[5.2]
 
 		create_table :categories do |t|
 			t.string :name,                         null: false
-
+			t.integer :nutrition_type,				null: false, default: 0
 			t.timestamps
 		end
 

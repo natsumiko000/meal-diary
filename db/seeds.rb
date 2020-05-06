@@ -40,32 +40,38 @@ p 'start categories create'
 	},
 	{
 		name: '緑黄色野菜',
+		nutrition_type: 'arrange',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: '淡色野菜',
+		nutrition_type: 'arrange',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: '果物',
+		nutrition_type: 'arrange',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: '穀類',
+		nutrition_type: 'energy',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: 'イモ',
+		nutrition_type: 'energy',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: '油脂',
+		nutrition_type: 'energy',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	}
 ].each do |category|
 	c = Category.find_or_initialize_by(name: category[:name])
+	c.update(category)
 	c.image.attach(io: category[:image], filename: 'test.png')
-	c.save
 end
 
 p 'finish categories create'

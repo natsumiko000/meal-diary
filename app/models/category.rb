@@ -6,4 +6,6 @@ class Category < ApplicationRecord
 	has_one_attached :image
 
 	validates :name, :image, presence: true
+
+	enum nutrition_type: {body:0, arrange:1, energy:2}
 end
