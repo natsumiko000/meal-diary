@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find_by(id: params[:id])
+		@user = User.find(params[:id])
 	end
 
 	def edit
@@ -20,8 +20,9 @@ class UsersController < ApplicationController
 		@customer = Customer.find(params[:id])
   		if @customer.update(customer_params)
   			redirect_to admin_customer_path(@customer)
-  	else
-  		render :edit
+  		else
+  			render :edit
+  		end
 	end
 
 	def confirm
