@@ -8,12 +8,9 @@ class Init < ActiveRecord::Migration[5.2]
 		end
 
 		create_table :diaries do |t|
-			t.integer :event_id,                    null: false
+			t.integer :user_id,            	        null: false
 			t.integer :status,                      null: false, default: 0
 			t.date :date,                           null: false
-			t.string :b_image_id
-			t.string :l_image_id
-			t.string :d_image_id
 			t.float :weight
 
 			t.timestamps
@@ -29,9 +26,6 @@ class Init < ActiveRecord::Migration[5.2]
 
 		create_table :categories do |t|
 			t.string :name,                         null: false
-			t.string :name_en,                      null: false
-			t.integer :food_id,                     null: false
-			t.string :image_id,                     null: false
 
 			t.timestamps
 		end
@@ -47,7 +41,6 @@ class Init < ActiveRecord::Migration[5.2]
 			t.string :name,                         null: false
 			t.text :caption,                        null: false
 			t.integer :category_id,                 null: false
-			t.string :image_id,                     null: false
 
 			t.timestamps
 		end

@@ -1,9 +1,29 @@
 = form_for @diary do |f|
-  - if @diary.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@diary.errors.count, "error")} prohibited this diary from being saved:"
-      ul
-        - @diary.errors.full_messages.each do |message|
-          li = message
+    = f.hidden_field :date, value: @diary.date
+  	- if @diary.errors.any?
+		#error_explanation
+	  		h2 = "#{pluralize(@diary.errors.count, "error")} prohibited this diary from being saved:"
+	  		ul
+				- @diary.errors.full_messages.each do |message|
+		  			li = message
+    - Category.all.each do |c|
+      	= f.check_box :category_ids, {multiple: true}, c.id, nil
 
-  .actions = f.submit
+      	= image_tag c.image, width: "10%"
+      	= c.name
+    br
+    = f.label :朝ごはん
+    = f.file_field :b_image
+    br
+    = f.label :昼ごはん
+    = f.file_field :l_image
+    br
+    = f.label :晩ごはん
+    = f.file_field :d_image
+    br
+    = f.label :体重
+    = f.text_field :weight
+    = f.label :kg
+
+
+  	.actions = f.submit
