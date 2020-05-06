@@ -22,6 +22,12 @@ class DiariesController < ApplicationController
 
   # GET /diaries/1/edit
   def edit
+    diary = Diary.find_by(id: params[:id])
+    if diary.user == current_user
+      @diary = diary
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   # POST /diaries
@@ -30,9 +36,8 @@ class DiariesController < ApplicationController
     @diary = current_user.diaries.new(diary_params)
 
     respond_to do |format|
-      binding.pry
       if @diary.save
-        format.html { redirect_to @diary, notice: 'Diary was successfully created.' }
+        format.html { redirect_to current_user, notice: 'Diary was successfully created.' }
         format.json { render :show, status: :created, location: @diary }
       else
         format.html { render :new }
@@ -46,7 +51,7 @@ class DiariesController < ApplicationController
   def update
     respond_to do |format|
       if @diary.update(diary_params)
-        format.html { redirect_to @diary, notice: 'Diary was successfully updated.' }
+        format.html { redirect_to current_user, notice: 'Diary was successfully updated.' }
         format.json { render :show, status: :ok, location: @diary }
       else
         format.html { render :edit }

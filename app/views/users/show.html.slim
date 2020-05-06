@@ -1,17 +1,22 @@
 h3 マイページ
+p#notice = notice
 br
 h3 User Info
-	table
-        thead
-         	tr
-            	th Name
-            	td = @user.name
-        tbody
-          	tr
-            	th Introduction
-            	td = @user.introduction
+table.table
+    thead
+     	tr
+        	th Name
+        	td = @user.name
+    tbody
+      	tr
+        	th  Introduction
+        	td = @user.introduction
+
+
+
+
 br
-p = link_to '編集', edit_user_path(@user)
+= link_to '編集', edit_user_path(@user)
 br
 
 #calendar

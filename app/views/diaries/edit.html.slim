@@ -1,8 +1,8 @@
-h1 Editing diary
+= @diary.date
+br
+= link_to '調べる', categories_path
 
 == render 'form'
 
-=> link_to 'Show', @diary
-'|
-=< link_to 'Back', diaries_path
+= link_to 'Back', user_path
 
