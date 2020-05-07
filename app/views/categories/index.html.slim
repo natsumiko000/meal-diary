@@ -3,18 +3,21 @@ h3 食品項目一覧
 h6 身体をつくる食品
 - @b.each do |c|
 	= image_tag c.image, width: "10%"
+	= c.food_group_i18n
 	= link_to c.name, category_path(c)
 br
 br
 h6 身体の調子を整える食品
 - @a.each do |c|
 	= image_tag c.image, width: "10%"
+	= c.food_group_i18n
 	= link_to c.name, category_path(c)
 br
 br
 h6 エネルギーとなる食品
 - @e.each do |c|
 	= image_tag c.image, width: "10%"
+	= c.food_group_i18n
 	= link_to c.name, category_path(c)
 br
 br

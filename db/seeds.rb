@@ -32,39 +32,47 @@ p 'start categories create'
 	},
 	{
 		name: '乳製品',
+		food_group: 'second_group',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: '海藻',
+		food_group: 'second_group',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: '緑黄色野菜',
+		food_group: 'third_group',
 		nutrition_type: 'arrange',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: '淡色野菜',
+		food_group: 'fourth_group',
 		nutrition_type: 'arrange',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: '果物',
+		food_group: 'fourth_group',
 		nutrition_type: 'arrange',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: '穀類',
+		food_group: 'fifth_group',
 		nutrition_type: 'energy',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: 'イモ',
+		food_group: 'fifth_group',
 		nutrition_type: 'energy',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
 		name: '油脂',
+		food_group: 'sixth_group',
 		nutrition_type: 'energy',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	}
