@@ -1,0 +1,10 @@
+ja:
+	enums:
+		category:
+			food_group:
+				first_group: 第1群
+				second_group: 第2群
+				third_group: 第3群
+				fourth_group: 第4群
+				fifth_group: 第5群
+				sixth_group: 第6群

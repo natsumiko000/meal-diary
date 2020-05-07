@@ -1,6 +1,7 @@
-p#notice = notice
-
-
-=> link_to 'Edit', edit_category_path(@category)
-'|
-=< link_to 'Back', categories_path
+h2 = @category.name
+h4 = @category.caption
+h6 主な食品一覧
+- @foods.each do |f|
+	= image_tag f.image, width: "10%"
+	= f.name
+	= f.caption
