@@ -28,6 +28,7 @@ class Init < ActiveRecord::Migration[5.2]
 			t.string :name,                         null: false
 			t.integer :nutrition_type,				null: false, default: 0
 			t.integer :food_group,					null: false, default: 0
+			t.string :caption,						null: false
 			t.timestamps
 		end
 
