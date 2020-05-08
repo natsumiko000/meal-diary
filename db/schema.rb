@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_05_05_123647) do
     t.integer "status", default: 0, null: false
     t.date "date", null: false
     t.float "weight"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,14 +67,6 @@ ActiveRecord::Schema.define(version: 2020_05_05_123647) do
   create_table "diary_categories", force: :cascade do |t|
     t.integer "diary_id", null: false
     t.integer "category_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "diary_comments", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "diary_id", null: false
-    t.text "comment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
