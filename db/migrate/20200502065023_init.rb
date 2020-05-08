@@ -12,17 +12,11 @@ class Init < ActiveRecord::Migration[5.2]
 			t.integer :status,                      null: false, default: 0
 			t.date :date,                           null: false
 			t.float :weight
+			t.text :comment
 
 			t.timestamps
 		end
 
-		create_table :diary_comments do |t|
-			t.integer :user_id,                     null: false
-			t.integer :diary_id,                    null: false
-			t.text :comment,                        null: false
-
-			t.timestamps
-		end
 
 		create_table :categories do |t|
 			t.string :name,                         null: false
