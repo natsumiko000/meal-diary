@@ -18,6 +18,7 @@ class DiariesController < ApplicationController
   end
 
   def data
+    @data
   end
 
   # GET /diaries/1/edit
