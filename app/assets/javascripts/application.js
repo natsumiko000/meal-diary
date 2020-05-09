@@ -22,6 +22,7 @@
 //= require fullcalendar
 //= require rails-ujs
 //= require turbolinks
+//= require Chart.min
 //
 
 $(function () {
@@ -40,5 +41,4 @@ $(function () {
 	    eventCalendar();
     });
 });
-
 

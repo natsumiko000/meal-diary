@@ -41,7 +41,7 @@ p 'start categories create'
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
-		name: '海藻',
+		name: '海藻類',
 		caption: '骨や歯を作る、体の各機能を調節',
 		food_group: 'second_group',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
@@ -75,14 +75,14 @@ p 'start categories create'
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
-		name: 'イモ',
+		name: 'イモ類',
 		caption: 'エネルギー源となる、体の各機能を調節',
 		food_group: 'fifth_group',
 		nutrition_type: 'energy',
 		image: File.open("#{Rails.root}/app/assets/images/sample.png")
 	},
 	{
-		name: '油脂',
+		name: '油脂類',
 		caption: 'エネルギー源となる',
 		food_group: 'sixth_group',
 		nutrition_type: 'energy',
