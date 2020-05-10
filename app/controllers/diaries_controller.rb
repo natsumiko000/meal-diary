@@ -74,10 +74,13 @@ class DiariesController < ApplicationController
   # DELETE /diaries/1
   # DELETE /diaries/1.json
   def destroy
-    @diary.destroy
     respond_to do |format|
-      format.html { redirect_to diaries_url, notice: 'Diary was successfully destroyed.' }
-      format.json { head :no_content }
+      if @diary.destroy
+        format.html { redirect_to current_user, notice: 'Diary was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        edirect_to current_user
+      end
     end
   end
 
