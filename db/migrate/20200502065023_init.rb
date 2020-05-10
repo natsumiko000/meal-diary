@@ -40,5 +40,7 @@ class Init < ActiveRecord::Migration[5.2]
 
 			t.timestamps
 		end
+
+		add_index :diaries, :date,                	unique: true
 	end
 end

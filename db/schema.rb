@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_05_05_123647) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["date"], name: "index_diaries_on_date", unique: true
   end
 
   create_table "diary_categories", force: :cascade do |t|
