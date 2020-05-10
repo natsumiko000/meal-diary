@@ -14,12 +14,18 @@
     br
     = f.label :朝ごはん
     = f.file_field :b_image
+    - if @diary.b_image.attached? 
+      = image_tag @diary.b_image, width: "10%"
     br
     = f.label :昼ごはん
     = f.file_field :l_image
+    - if @diary.l_image.attached? 
+      = image_tag @diary.l_image, width: "10%"
     br
     = f.label :晩ごはん
     = f.file_field :d_image
+    - if @diary.d_image.attached?
+      = image_tag @diary.d_image, width: "10%"
     br
     = f.label :体重
     = f.text_field :weight
