@@ -72,13 +72,6 @@ ActiveRecord::Schema.define(version: 2020_05_05_123647) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "events", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "diary_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "foods", force: :cascade do |t|
     t.string "name", null: false
     t.text "caption", null: false
