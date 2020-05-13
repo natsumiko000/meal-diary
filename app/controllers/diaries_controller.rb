@@ -47,18 +47,8 @@ class DiariesController < ApplicationController
 	# POST /diaries.json
 	def create
 		@diary = current_user.diaries.new(diary_params)
-
 		if @diary.save
-			event = current_user.events.new(
-				diary_id: @diary.id,
-				start: @diary.date,
-				end: @diary.date,
-				)
-			if event.save
-				redirect_to current_user, notice: 'Diary was successfully created.' 
-			else
-				redirect_back(fallback_location: root_path)
-			end
+			redirect_to current_user, notice: 'Diary was successfully created.' 
 		else
 			render :new
 		end
