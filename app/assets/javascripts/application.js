@@ -28,9 +28,13 @@
 $(function () {
     function eventCalendar() {
         return $('#calendar').fullCalendar({
+            events: '/diaries.json',
+            titleFormat: 'YYYY年 M月',
+            dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
 			dayClick: function(date, jsEvent, view) {
-			    $(".fc-day[data-date=" + date.format("YYYY-MM-DD") + "]").css("background-color", "red"); //make the selected day have a red background
-				window.location.href = '/';
+			    $(".fc-day[data-date=" + date.format("YYYY-MM-DD") + "]").css("background-color", "red");
+                var selected_date = date.format("YYYY-MM-DD");
+				window.location.href = `/diaries/record?date=${selected_date}`;
 			}
         });
     };

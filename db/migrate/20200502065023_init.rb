@@ -1,11 +1,5 @@
 class Init < ActiveRecord::Migration[5.2]
 	def change
-		create_table :events do |t|
-			t.integer :user_id,                     null: false
-			t.integer :diary_id,                    null: false
-
-			t.timestamps
-		end
 
 		create_table :diaries do |t|
 			t.integer :user_id,            	        null: false

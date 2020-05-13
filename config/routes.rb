@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-
-  resources :events
 	root 'home#top'
-
+  	resources :events
 	devise_for :admins, controllers: {
 		sessions:      'admins/sessions',
 		passwords:     'admins/passwords',
@@ -25,6 +23,9 @@ Rails.application.routes.draw do
 	resources :diaries do
 		member do
 			get 'data'
+		end
+		collection do
+			get 'record'
 		end
 		resource :diary_comments, only: [:create, :destroy]
 	end
