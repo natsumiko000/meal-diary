@@ -96,8 +96,8 @@ p 'start categories create'
 	}
 ].each do |category|
 	c = Category.find_or_initialize_by(name: category[:name])
-	c.image.attach(io: category[:image], filename: 'test.png')
 	c.update(category)
+	c.image.attach(io: category[:image], filename: 'test.png')
 end
 
 p 'finish categories create'
@@ -124,8 +124,8 @@ p 'start foods create'
 	}
 ].each do |food|
 	f = Food.find_or_initialize_by(name: food[:name])
-	f.image.attach(io: food[:image], filename: 'test.png')
 	f.update(food)
+	f.image.attach(io: food[:image], filename: 'test.png')
 end
 
 p 'finish foods create'
