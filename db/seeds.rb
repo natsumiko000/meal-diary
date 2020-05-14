@@ -1,14 +1,20 @@
 p 'start user create'
 
-User.create!(
-	[
-		{
-			name:  'TEST',
-			email: 'test@a.com',
-			password: '111111'
-		}
-	]
-)
+[
+	{
+		name:  'TEST',
+		email: 'test@a.com',
+		password: '111111'
+	},
+	{
+		name:  'TEST2',
+		email: 'test2@a.com',
+		password: '111111'
+	},
+].each do |user|
+	u = User.find_or_initialize_by(email: user[:email])
+	u.update(user)
+end
 
 p 'finish admin create'
 p 'start categories create'
