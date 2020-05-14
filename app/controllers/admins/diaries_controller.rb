@@ -1,4 +1,4 @@
-class Admins::DiariesController < Admin::BaseController
+class Admins::DiariesController < Admins::BaseController
   before_action :set_diary, only: [:show, :edit, :update, :destroy]
 
   # GET /diaries

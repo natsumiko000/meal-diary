@@ -1,4 +1,4 @@
-class Admins::FoodsController < Admin::BaseController
+class Admins::FoodsController < Admins::BaseController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
 
   # GET /foods

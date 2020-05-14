@@ -1,2 +1,2 @@
-class Admins::HomeController < Admin::BaseController
+class Admins::HomeController < Admins::BaseController
 end
