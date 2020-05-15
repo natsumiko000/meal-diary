@@ -129,3 +129,20 @@ p 'start foods create'
 end
 
 p 'finish foods create'
+p 'start admin create'
+
+[
+	{
+		email: 'admin@a.com',
+		password: '111111'
+	},
+	{
+		email: 'admin1@a.com',
+		password: '111111'
+	},
+].each do |admin|
+	u = Admin.find_or_initialize_by(email: admin[:email])
+	u.update(admin)
+end
+
+p 'finish admin create'
