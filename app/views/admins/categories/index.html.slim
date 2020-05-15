@@ -1,0 +1,27 @@
+h1 Listing categories
+
+table
+  thead
+    tr
+      th ID
+      th Name
+      th 食品群
+      th 栄養
+      th
+      th
+      th
+
+  tbody
+    - @categories.each do |category|
+      tr
+        td = category.id
+        td = category.name
+        td = category.food_group
+        td = category.nutrition_type
+        td = link_to 'Show', category
+        td = link_to 'Edit', edit_admins_category_path(category)
+        td = link_to 'Destroy', category, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Category', new_admins_category_path

@@ -6,6 +6,6 @@ class Admins::BaseController < ApplicationController
   private
 
   def admin_user
-    redirect_to(root_url) unless current_host && current_host.admin?
+    redirect_to(root_url) unless current_admin
   end
 end
