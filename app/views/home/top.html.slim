@@ -1,1 +1,31 @@
-h4 topページ
+.container
+	.row
+		.col-md-1
+		.col-md-10
+			h6(style="display:inline;")日々の食事を
+			h5(style="display:inline;")
+				= link_to " 6食品群12項目 ", categories_path
+			h6(style="display:inline;")に分類して記録することで
+			h6 栄養バランスを見直してみませんか？
+			br
+
+			.a
+				.b
+					img src="assets/meal1-min.jpg" class="c"
+				.b
+					img src="assets/meal2-min.jpg" class="c"
+				.b
+					img src="assets/meal3-min.jpg" class="c"
+			br
+			br
+	.row
+		.col-md-2
+		.col-md-3
+			h6 ❁ Meal Diaryについて詳しく見る
+			.btn-horizontal-border.text-md-center(style="width:100%")
+				= link_to "About", home_about_path
+		.col-md-2
+		.col-md-3
+			h6 ❁ Meal Diaryを使ってみる
+			.btn-horizontal-border.text-md-center(style="width:100%")
+				= link_to "Sign Up", new_user_registration_path
