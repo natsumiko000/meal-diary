@@ -9,7 +9,6 @@ table
       th Caption
       th
       th
-      th
 
   tbody
     - @foods.each do |food|
@@ -18,7 +17,6 @@ table
         td = food.name
         td = food.category.name
         td = food.caption
-        td = link_to 'Show', food
         td = link_to 'Edit', edit_admins_food_path(food)
         td = link_to 'Destroy', food, data: { confirm: 'Are you sure?' }, method: :delete
 

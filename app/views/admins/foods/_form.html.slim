@@ -17,7 +17,7 @@
 	.form-group
 	.row
 	.col-md-5
-	  	= f.label "カテゴリー", class: "signup-label required"
+	  	= f.label :食品目
 	  	.row.m-b-md
 			= f.select :category_id, Category.all.map{|t|[t.name, t.id]}, {}, class: "form-control"
 
