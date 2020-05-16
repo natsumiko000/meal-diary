@@ -1,0 +1,24 @@
+= form_for @food do |f|
+	- if @food.errors.any?
+		#error_explanation
+			h2 = "#{pluralize(@food.errors.count, "error")} prohibited this food from being saved:"
+			ul
+			- @food.errors.full_messages.each do |message|
+				li = message
+	#form-group
+		= f.label :食品名
+		#form-control
+			= f.text_field :name
+	#form-group
+		= f.label :データ
+		#form-control
+			= f.text_area :caption
+
+	.form-group
+	.row
+	.col-md-5
+	  	= f.label :食品目
+	  	.row.m-b-md
+			= f.select :category_id, Category.all.map{|t|[t.name, t.id]}, {}, class: "form-control"
+
+ 	.actions = f.submit '登録'

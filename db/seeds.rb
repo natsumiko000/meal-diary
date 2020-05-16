@@ -107,25 +107,38 @@ p 'start foods create'
 	{
 		name: '牛肉',
 		caption: '牛もも肉：209kcal/100g',
-		category_id: '1',
-		image: File.open("./public/img/sample.png")
+		category_id: '1'
 	},
 	{
 		name: '豚肉',
 		caption: '豚もも肉：183kcal/100g',
-		category_id: '1',
-		image: File.open("./public/img/sample.png")
+		category_id: '1'
 	},
 	{
 		name: '鶏肉',
 		caption: '鶏もも肉（皮付き）：200kcal/100g',
-		category_id: '1',
-		image: File.open("./public/img/sample.png")
+		category_id: '1'
 	}
 ].each do |food|
 	f = Food.find_or_initialize_by(name: food[:name])
 	f.update(food)
-	f.image.attach(io: food[:image], filename: 'test.png')
 end
 
 p 'finish foods create'
+p 'start admin create'
+
+[
+	{
+		email: 'admin@a.com',
+		password: '111111'
+	},
+	{
+		email: 'admin1@a.com',
+		password: '111111'
+	},
+].each do |admin|
+	u = Admin.find_or_initialize_by(email: admin[:email])
+	u.update(admin)
+end
+
+p 'finish admin create'

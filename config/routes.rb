@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 	root 'home#top'
 	get 'home/about'
-  	resources :events
+  	
 	devise_for :admins, controllers: {
 		sessions:      'admins/sessions',
 		passwords:     'admins/passwords',
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 	end
 	resources :categories, only: [:index, :show]
 
-	namespace :admin do
+	namespace :admins do
 		get 'home/top'
 		resources :users
 		resources :foods
