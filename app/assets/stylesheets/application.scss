@@ -17,7 +17,6 @@
 @import "bootstrap";
 
 .c{
-  height: 500px;
   width :100%;
 }
 
@@ -62,4 +61,11 @@
 
 .btn-horizontal-border:hover:after {
   top: 3px;
+}
+
+.navbar-brand {
+  background: url("/img/logo.jpg") no-repeat left center;
+  background-size: contain;
+  height: 70px;
+  width: 160px;
 }
