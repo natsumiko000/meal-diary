@@ -3,10 +3,11 @@
 		.col-md-4
 			.text-md-left.ml-4
 				= @diary.date
-		.col-md-4
-		.col-md-4
+		.col-md-5
+		.col-md-3
 			.text-md-right.mr-4
-				= link_to 'Search Category', categories_path
+				.btn.page-link.text-dark.d-inline-block
+					= link_to '食品群・品目を調べる', categories_path
 	== render 'form'
 	.row.mt-4
 		= link_to 'Back', user_path(current_user)
