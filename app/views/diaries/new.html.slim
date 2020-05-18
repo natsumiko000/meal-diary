@@ -1,9 +1,12 @@
 .container
-	.row.mt-4
-		.col-md-12.ml-4
-			= @diary.date
-			br
-			= link_to 'Search Category', categories_path
+	.row.mt-4mb-2
+		.col-md-4
+			.text-md-left.ml-4
+				= @diary.date
+		.col-md-4
+		.col-md-4
+			.text-md-right.mr-4
+				= link_to 'Search Category', categories_path
 	== render 'form'
 	.row.mt-4
 		= link_to 'Back', user_path(current_user)

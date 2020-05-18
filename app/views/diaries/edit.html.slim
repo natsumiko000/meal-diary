@@ -1,11 +1,15 @@
-= @diary.date
-br
-= link_to '調べる', categories_path
-
-== render 'form'
-
-
-= link_to '削除する', diary_path(@diary), method: :delete
-br
-= link_to 'Back', user_path(current_user)
+.container
+	.row.mt-4mb-2
+		.col-md-4
+			.text-md-left.ml-4
+				= @diary.date
+		.col-md-4
+		.col-md-4
+			.text-md-right.mr-4
+				= link_to '食品群・品目を調べる', categories_path
+	== render 'form'
+	.row.mt-4
+		=> link_to '削除する', diary_path(@diary), method: :delete
+		'｜
+		=< link_to 'マイページへ', user_path(current_user)
 
