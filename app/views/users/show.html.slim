@@ -1,22 +1,18 @@
-h3 マイページ
-p#notice = notice
-br
-h3 User Info
-table.table
-    thead
-     	tr
-        	th Name
-        	td = @user.name
-    tbody
-      	tr
-        	th  Introduction
-        	td = @user.introduction
-
-
-
-
-br
-= link_to '編集', edit_user_path(@user)
-br
-
-#calendar
+/ p#notice = notice
+.container
+	.row.mt-4
+		.col-md-3.p-md-3
+			table.table.table-hover(style="width:100%")
+					tr
+						th Name
+						td = @user.name
+					tr
+						th  Introduction
+						br
+						td = @user.introduction
+					tr
+			.text-md-center
+				.btn.btn-light(style="width:100%")
+					= link_to 'Edit User Info', edit_user_path(@user)
+		.col-md-9
+			#calendar.p-md-3
