@@ -1,38 +1,44 @@
-= form_with model: @diary, local: true do |f|
-    = f.hidden_field :date, value: @diary.date
-  	- if @diary.errors.any?
-		#error_explanation
-	  		h2 = "#{pluralize(@diary.errors.count, "error")} prohibited this diary from being saved:"
-	  		ul
-				- @diary.errors.full_messages.each do |message|
-		  			li = message
-    - Category.all.each do |c|
-      	= f.check_box :category_ids, {multiple: true}, c.id, nil
+	= form_with model: @diary, local: true do |f|
+			= f.hidden_field :date, value: @diary.date
+			- if @diary.errors.any?
+			#error_explanation
+					h2 = "#{pluralize(@diary.errors.count, "error")} prohibited this diary from being saved:"
+					ul
+					- @diary.errors.full_messages.each do |message|
+							li = message
+			.col-md-12
+				.row
+					- Category.all.each do |c|
+						.col-md-2.mb-4
+							.card.img-thumbnail
+								.card-img-top
+									= image_tag c.image, width: "100%"
+								.card-body
+									.card-text.text-center
+										= f.check_box :category_ids, {multiple: true}, c.id, nil
+										= c.name
+			br
+			= f.label :朝ごはん
+			= f.file_field :b_image
+			- if @diary.b_image.attached? 
+				= image_tag @diary.b_image, width: "10%"
+			br
+			= f.label :昼ごはん
+			= f.file_field :l_image
+			- if @diary.l_image.attached? 
+				= image_tag @diary.l_image, width: "10%"
+			br
+			= f.label :晩ごはん
+			= f.file_field :d_image
+			- if @diary.d_image.attached?
+				= image_tag @diary.d_image, width: "10%"
+			br
+			= f.label :体重
+			= f.text_field :weight
+			= f.label :kg
+			br
+			= f.label :MEMO
+			= f.text_area :comment
+			br
 
-      	= image_tag c.image, width: "10%"
-      	= c.name
-    br
-    = f.label :朝ごはん
-    = f.file_field :b_image
-    - if @diary.b_image.attached? 
-      = image_tag @diary.b_image, width: "10%"
-    br
-    = f.label :昼ごはん
-    = f.file_field :l_image
-    - if @diary.l_image.attached? 
-      = image_tag @diary.l_image, width: "10%"
-    br
-    = f.label :晩ごはん
-    = f.file_field :d_image
-    - if @diary.d_image.attached?
-      = image_tag @diary.d_image, width: "10%"
-    br
-    = f.label :体重
-    = f.text_field :weight
-    = f.label :kg
-    br
-    = f.label :MEMO
-    = f.text_area :comment
-    br
-
-  	.actions = f.submit
+			.actions = f.submit
