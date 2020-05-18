@@ -15,10 +15,29 @@
  *= require fullcalendar
  */
 @import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 .c{
   width :100%;
 }
+
+.btn-flat-logo {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #ffffff;
+  background: #68a9cf;
+  transition: .4s;
+}
+
+.btn-flat-logo:hover {
+  background: #409ecc;
+}
+
+
 
 .btn-horizontal-border {
   position: relative;
