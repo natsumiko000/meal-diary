@@ -1,7 +1,18 @@
-h2 = @category.name
-h4 = @category.caption
+.container
+	.row
+		.col-md-2.p-md-1
+				= image_tag @category.image, width: "100%"
+    	.col-md-4
+  				.card-body.p-md-4.text-monospace
+				    h5.card-title
+				    	= @category.name
+				    h6.card-subtitle.mb-2.text-muted
+				    	= @category.food_group_i18n
+				    p.card-text
+				    	= @category.caption
+							
+
 h6 主な食品一覧
 - @foods.each do |f|
-	= image_tag f.image, width: "10%"
 	= f.name
 	= f.caption
