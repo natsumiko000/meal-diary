@@ -1,24 +1,49 @@
-h3 食品項目一覧
+.container
+	.row
+		h4.ml-4 食品項目一覧
+	.row
+		.col-md-12.mt-4
+			h6.ml-2 身体をつくる食品
+			.row
+				- @b.each do |c|
+					.col-md-2.mb-4
+						.card.img-thumbnail
+							.card-img-top
+								= image_tag c.image, width: "100%"
+							.card-body
+								.card-title.text-center
+									= link_to c.name, category_path(c)
+								.card-text.text-center
+									= c.food_group_i18n
+	.row
+		.col-md-12.mt-4
+			h6.ml-2 身体をつくる食品
+			.row
+				- @a.each do |c|
+					.col-md-2.mb-4
+						.card.img-thumbnail
+							.card-img-top
+								= image_tag c.image, width: "100%"
+							.card-body
+								.card-title.text-center
+									= link_to c.name, category_path(c)
+								.card-text.text-center
+									= c.food_group_i18n
+	.row
+		.col-md-12.mt-4
+			h6.ml-2 身体をつくる食品
+			.row
+				- @e.each do |c|
+					.col-md-2.mb-4
+						.card.img-thumbnail
+							.card-img-top
+								= image_tag c.image, width: "100%"
+							.card-body
+								.card-title.text-center
+									= link_to c.name, category_path(c)
+								.card-text.text-center
+									= c.food_group_i18n
 
-h6 身体をつくる食品
-- @b.each do |c|
-	= image_tag c.image, width: "10%"
-	= c.food_group_i18n
-	= link_to c.name, category_path(c)
-br
-br
-h6 身体の調子を整える食品
-- @a.each do |c|
-	= image_tag c.image, width: "10%"
-	= c.food_group_i18n
-	= link_to c.name, category_path(c)
-br
-br
-h6 エネルギーとなる食品
-- @e.each do |c|
-	= image_tag c.image, width: "10%"
-	= c.food_group_i18n
-	= link_to c.name, category_path(c)
-br
-br
-= link_to 'Back', :back
+
+
+ = link_to 'Back', :back

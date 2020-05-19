@@ -23,76 +23,76 @@ p 'start categories create'
 	{
 		name: '肉類',
 		caption: '骨や筋肉を作る、エネルギー源となる',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category1.jpg")
 	},
 	{
 		name: '魚類',
 		caption: '骨や筋肉を作る、エネルギー源となる',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category2.jpg")
 	},
 	{
 		name: '卵',
 		caption: '骨や筋肉を作る、エネルギー源となる',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category3.jpg")
 	},
 	{
 		name: '大豆製品',
 		caption: '骨や筋肉を作る、エネルギー源となる',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category4.jpg")
 	},
 	{
 		name: '乳製品',
 		caption: '骨や歯を作る、体の各機能を調節',
 		food_group: 'second_group',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category5.jpg")
 	},
 	{
 		name: '海藻類',
 		caption: '骨や歯を作る、体の各機能を調節',
 		food_group: 'second_group',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category6.jpg")
 	},
 	{
 		name: '緑黄色野菜',
 		caption: '皮膚や粘膜の保護、体の各機能を調節',
 		food_group: 'third_group',
 		nutrition_type: 'arrange',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category7.jpg")
 	},
 	{
 		name: '淡色野菜',
 		caption: '体の各機能を調節',
 		food_group: 'fourth_group',
 		nutrition_type: 'arrange',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category8.jpg")
 	},
 	{
 		name: '果物',
 		caption: '体の各機能を調節',
 		food_group: 'fourth_group',
 		nutrition_type: 'arrange',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category9.jpg")
 	},
 	{
 		name: '穀類',
 		caption: 'エネルギー源となる、体の各機能を調節',
 		food_group: 'fifth_group',
 		nutrition_type: 'energy',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category10.jpg")
 	},
 	{
 		name: 'イモ類',
 		caption: 'エネルギー源となる、体の各機能を調節',
 		food_group: 'fifth_group',
 		nutrition_type: 'energy',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category11.jpg")
 	},
 	{
 		name: '油脂類',
 		caption: 'エネルギー源となる',
 		food_group: 'sixth_group',
 		nutrition_type: 'energy',
-		image: File.open("./public/img/sample.png")
+		image: File.open("./public/img/category12.jpg")
 	}
 ].each do |category|
 	c = Category.find_or_initialize_by(name: category[:name])
