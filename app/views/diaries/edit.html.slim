@@ -6,8 +6,10 @@
 		.col-md-5
 		.col-md-3
 			.text-md-right.mr-4
-				.btn.page-link.text-dark.d-inline-block
+				.btn.page-link.text-dark.d-inline-block.mb-2
 					= link_to '食品群・品目を調べる', categories_path
+				.btn.page-link.text-dark.d-inline-block
+					= link_to '１週間のデータを見る', data_diary_path(@diary)
 	== render 'form'
 	.row.mt-4
 		=> link_to '削除する', diary_path(@diary), method: :delete
