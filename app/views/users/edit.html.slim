@@ -1,16 +1,41 @@
+.container.text-monospace
+	.row
+    	.col-md-6.offset-md-3.my-auto
+			= form_for(@user) do |f|
+				.col-md-12.mb-1
+					.form-group
+						label[for="Input"]
+		    				| Name
+		    			input#Input.form-control[type="text" placeholder=""]
+				.col-md-12.mb-1
+					.form-group
+						label[for="Input"]
+		    				| Introduction
+		    			input#Input.form-control[type="text_area" placeholder=""]
+				.col-md-12.mb-1
+					.form-group.text-right
+						= f.submit 'Update User', class: "btn page-link text-dark d-inline-block"
+
+				= link_to "退会する", confirm_user_path(@user)
+
+				= link_to '戻る', user_path
+
+
+
+
 h3 User Info
 
 = form_for(@user) do |f| 
-    #form-group
-        = f.label :Name
-        #form-control
-        	= f.text_field :name
-    #form-group
-        = f.label :Introduction
-        #form-control
-        	= f.text_area :introduction
-    .form-group
-        	= f.submit 'Update User'
+	#form-group
+		= f.label :Name
+		#form-control
+			= f.text_field :name
+	#form-group
+		= f.label :Introduction
+		#form-control
+			= f.text_area :introduction
+	.form-group
+			= f.submit 'Update User'
 
 = link_to "退会する", confirm_user_path(@user)
 
