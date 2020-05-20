@@ -1,9 +1,7 @@
-h4 1週間のデータ
-
-
-.container
+.container.text-monospace
 	.row
 		.col-md-12
+			h5.ml-4 1週間のデータ
 			canvas#mealChart height="200" width="400" 
 
 javascript:
@@ -14,7 +12,7 @@ javascript:
 	        data: {
 	            labels: #{raw @records.map{|t| t[0]}},
 	            datasets: [{
-	                label: '# of Votes',
+	                label: '摂取日数',
 	                data: #{@records.map{|t| t[1]}},
 	                backgroundColor: [
 	                    'rgba(255, 99, 132, 0.2)',
