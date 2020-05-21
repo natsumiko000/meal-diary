@@ -1,10 +1,10 @@
-.container
-	.row.p-md-3
+.container.text-monospace
+	.row.p-md-3.mb-4
 		.col-md-1
 		.col-md-3.text-md-center
 				= image_tag @category.image, width: "100%"
     	.col-md-7
-  				.card-body.p-md-4.text-monospace
+  				.card-body.p-md-4
 				    h5.card-title
 				    	= @category.name
 				    h6.card-subtitle.mb-2.text-muted
@@ -12,17 +12,22 @@
 				    br
 				    p.card-text
 				    	= @category.caption
-	.row.mt-4
+	.row.mt-4.mb-4
 		.col-md-1
-		.col-md-10.text-monospace
+		.col-md-10.mt-4
 			h5 主な食品一覧
-			table.table-striped(style="width:100%")
-				tr
-					th 食品名
-					th カロリー目安
-				- @foods.each do |f|
+			table.custom.table-striped.mt-4(style="width:100%")
+				thead
 					tr
-						td = f.name
-						td = f.caption
+						th 食品名
+						th カロリー目安
+				tbody
+					- @foods.each do |f|
+						tr
+							td = f.name
+							td = f.caption
+	.row
+		br
+		br
+		br
 						
-
