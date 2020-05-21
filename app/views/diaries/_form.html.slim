@@ -12,7 +12,7 @@
 				.row
 					- Category.all.each do |c|
 						.col-md-2.mb-4
-							.card.img-thumbnail
+							.card.img-thumbnail(style="height:100%")
 								.card-img-top
 									= image_tag c.image, width: "100%"
 								.card-body
@@ -40,7 +40,7 @@
 							.file.form-control-file
 								= f.file_field :d_image
 				
-				.row
+				.row.mb-4
 					.col-md-3
 						.form-group.ml-4
   						label[for="Input"]
@@ -55,8 +55,9 @@
     						| MEMO
     					input#Input.form-control[type="text" placeholder="今日の食事について振り返りましょう☺"]
 
-	    		.row.mt-2
+	    		.row.mt-4.p-md-2
 	    			.col-md-4
 	    			.col-md-4
-	    				.text-md-center
-								.actions = f.submit
+		    			.form-group.text-center(style="width:100%")
+							= f.submit 'Record Meal Diary', class: "btn-flat-logo"
+		    				
