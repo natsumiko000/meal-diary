@@ -1,4 +1,18 @@
-h1 本当に退会しますか？
-
-= link_to '退会しない', edit_user_path(id: current_user.id)
-= link_to "退会する", user_registration_path(id: current_user.id), method: :delete
+.container
+	.row.mt-4.mb-4
+		.col-md-12
+			br
+			br
+			br
+			br
+			.text-center.mb-4
+				h6 本当に退会しますか…？
+				br
+				br
+		.col-md-2
+		.col-md-4.mb-2
+			.text-center
+				= link_to '退会しない', edit_user_path(id: current_user.id), class: "btn btn-outline-info w-100"
+		.col-md-4.mb-2
+			.text-center
+				= link_to "退会する", user_registration_path(id: current_user.id), method: :delete, class: "btn btn-outline-danger w-100"

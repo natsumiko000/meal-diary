@@ -1,38 +1,26 @@
-.container.text-monospace
+.container.welcome-section
 	.row
-		.col-md-1
-		.col-md-10
-			h6(style="display:inline;")日々の食事を
-			h5(style="display:inline;")
-				= link_to " 6食品群12項目 ", categories_path
-			h6(style="display:inline;")に分類して記録することで
-			h6 栄養バランスを見直してみませんか？
+		.col-md-10.offset-md-1.my-auto
 			br
-
 			.a
 				.b
-					img src="assets/meal1-min.jpg" class="c"
+					img src="assets/top1.jpg" class="c"
 				.b
-					img src="assets/meal2-min.jpg" class="c"
+					img src="assets/top2.jpg" class="c"
 				.b
-					img src="assets/meal3-min.jpg" class="c"
+					img src="assets/top3.jpg" class="c"
+				.b
+					img src="assets/top4.jpg" class="c"
 			br
 			br
 	.row.mb-4
-		.col-md-2
-		.col-md-3.text-md-center
-			h6 Meal Diaryについて詳しく見る
-			.btn-horizontal-border(style="width:100%")
-				= link_to "About", home_about_path
-		.col-md-2
-		.col-md-3.text-md-center
-			h6  Meal Diaryを使ってみる
-			.btn-horizontal-border(style="width:100%")
-				= link_to "Sign Up", new_user_registration_path
-
-
-	.row
-		h1
-			br
-			br
-			br
+		.col-md-6
+			.text-center
+				h6 Meal Diaryについて詳しく見る
+				.btn-horizontal-border.mb-4(style="width:50%")
+					= link_to "About", home_about_path
+		.col-md-6
+			.text-center
+				h6  Meal Diaryを使ってみる
+				.btn-horizontal-border.mb-4(style="width:50%")
+					= link_to "Sign Up", new_user_registration_path
