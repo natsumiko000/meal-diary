@@ -2,12 +2,12 @@
 	.row.mb-4
     	.col-md-10.offset-md-1
     		.row.mb-4
-				.col-md-3
+				.col-md-3.mb-4
 					.text-md-center
 						= image_tag @category.image, width: "100%"
-				.col-md-9
+				.col-md-9.mb-4
 						.card-body.p-md-4
-							h5.card-title
+							h5.card-title.font-weight-bold
 								= @category.name
 							h6.card-subtitle.mb-2.text-muted
 								= @category.food_group_i18n
@@ -16,7 +16,7 @@
 								= @category.caption
     		.row
 				.col-md-12
-					h5 主な食品一覧
+					h5.font-weight-bold 主な食品一覧
 					table.custom.table-striped.mt-4(style="width:100%")
 						thead
 							tr

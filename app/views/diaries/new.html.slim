@@ -1,7 +1,7 @@
 .container
 	.row.mb-4
 		.col-md-8
-			p= @diary.date.strftime('%Y/%m/%d')
+			p.font-weight-bold = @diary.date.strftime('%Y/%m/%d')
 		.col-md-4
 			.text-md-right
 				= link_to '食品群・品目を調べる', categories_path, class: 'btn page-link text-dark'

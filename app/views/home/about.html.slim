@@ -1,69 +1,47 @@
 .container
 	.row.mb-4
+		.col-md-7.mb-4
+			= image_tag "dish1.jpg", width: "100%"
 		.col-md-5.p-md-4
-			br
-			h4 バランスの良い食事をとるために
-			br
 			h6 健康な体を手に入れるためにはバランスの良い食事は不可欠です。
 			h6 Meal Diaryでは６つの食品群からなる１２品目について記録することができます。
 			h6 細かく記録していくことで、摂れている栄養と不足している栄養をしっかり把握することができます。
 			h6 食事から健康へアプローチしていきましょう！
 			br
-			br
-			.text-md-center
+			.text-center
 				p 食品群・品目について詳しくはこちら
-				.btn.page-link.text-dark.d-inline-block.mb-2(style="width:75%")
+				.btn.page-link.text-dark.d-inline-block.mb-4(style="width:75%")
 						= link_to 'Click！', categories_path
-		.col-md-7
-			= image_tag "dish1.jpg", width: "100%"
-			br
 
-	.row
-		.col-md-12.mt-4.mb-2
-			br
-			br
-			h4 Meal Diaryでできること
+	.row.mb-2
+		.col-md-12
+			h5 Meal Diaryでできること
 	.row.mb-4
-		.col-md-4.mt-2
-			= image_tag "obj1.jpg", width: "95%"
-			.mt-4
-				h5 1. 食事を記録
-			.p-md-2
-				h6 日々の食事でどの栄養が取れているのか
-				h6 どの栄養が足りていないのか
-				h6 日記形式で可視化して記録することで
-				h6 栄養バランスをわかりやすく管理できます
-		.col-md-4.mt-2
-			= image_tag "obj2.jpg", width: "95%"
-			.mt-4
-				h5 2. 献立を考えるお手伝い
-			.p-md-2
-				h6 Meal Diaryでは朝昼晩の３食を
-				h6 写真で残すことができます
-				h6 いつ何を食べたか簡単に確認できるので
-				h6 献立を考える際に役立ちます
-		.col-md-4.mt-2
-			= image_tag "obj3.jpg", width: "95%"
-			.mt-4
-				h5 3. 体質改善もサポート
-			.p-md-2
-				h6 不健康な身体の原因は食事であることが多いです
-				h6 食事の記録と一緒に体重管理もできるので
-				h6 食事の内容と体重変動の因果関係を突き止め
-				h6 健康意識を高めましょう
-		.col-md-12.mb-4
-			br
-			br
+		.col-md-4.mb-4
+			= image_tag "obj1.jpg", width: "95%", class: "mb-2"
+			h5 1. 食事を記録
+			.p-1
+				h6 日々の食事でどの栄養が取れているのか、どの栄養が足りていないのか。
+				h6 日記形式で可視化して記録することで栄養バランスをわかりやすく管理できます。
+		.col-md-4.mb-4
+			= image_tag "obj2.jpg", width: "95%", class: "mb-2"
+			h5 2. 献立を考えるお手伝い
+			.p-1
+				h6 Meal Diaryでは朝昼晩の３食を写真で残すことができます。
+				h6 いつ何を食べたか簡単に確認できるので、写真を見返すことで毎日の献立を考える際に役立ちます。
+		.col-md-4.mb-4
+			= image_tag "obj3.jpg", width: "95%", class: "mb-2"
+			h5 3. 体質改善もサポート
+			.p-1
+				h6 不健康な身体の原因は食事であることが多いです。
+				h6 食事の記録と一緒に体重管理もできるので、食事の内容と体重変動の因果関係を突き止め、健康意識を高めましょう！
+
 
 	.row.mb-4
-		.col-md-4
-		.col-md-4.text-md-center
-			.mb-3
-				h6  Meal Diaryを使ってみる
-			.btn-horizontal-border(style="width:100%")
-				= link_to "Sign Up", new_user_registration_path
-			br
-			br
-			br
+		.col-md-4.offset-md-4.my-auto
+			.text-center
+				h6.mb-2  Meal Diaryを使ってみる
+				.btn-horizontal-border.mb-4(style="width:100%")
+					= link_to "Sign Up", new_user_registration_path
 
 	
