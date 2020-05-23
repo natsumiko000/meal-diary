@@ -1,18 +1,16 @@
 .container
-	.row.mt-4mb-2
+	.row.mb-4
+		.col-md-8
+			p.font-weight-bold = @diary.date.strftime('%Y/%m/%d')
 		.col-md-4
-			.text-md-left.ml-4
-				= @diary.date
-		.col-md-5
-		.col-md-3
-			.text-md-right.mr-4
-				.btn.page-link.text-dark.d-inline-block.mb-2
-					= link_to '食品群・品目を調べる', categories_path
-				.btn.page-link.text-dark.d-inline-block
-					= link_to '１週間のデータを見る', data_diary_path(@diary)
-	== render 'form'
-	.row.mt-4
-		=> link_to '削除する', diary_path(@diary), method: :delete
-		'｜
-		=< link_to 'マイページへ', user_path(current_user)
-
+			= link_to '食品群・品目を調べる', categories_path, class: 'btn page-link text-dark mb-2'
+			= link_to '１週間のデータを見る', data_diary_path(@diary), class: 'btn page-link text-dark'
+	.row.mb-4
+		.col-md-12
+			== render 'form'
+	.row.mb-4
+		.col-md-12
+			.text-right
+				=> link_to '削除する', diary_path(@diary), method: :delete
+				'｜
+				=< link_to 'マイページへ', user_path(current_user)

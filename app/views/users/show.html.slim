@@ -1,25 +1,19 @@
 / p#notice = notice
 .container
-	.row.mt-4
-		.col-md-3.p-md-3.text-monospace
+	.row.mb-4
+		.col-md-3.p-4
 			table.table.table-hover(style="width:100%")
 					tr
 						th Name
 						td = @user.name
 					tr
 						th  Introduction
-						br
 						td = @user.introduction
 					tr
 			.text-md-center
 				.btn.page-link.text-dark.d-inline-block.mb-4(style="width:100%")
 					= link_to 'Edit User Info', edit_user_path(@user)
-				br
-				br
-				br
-				/ p １週間の栄養バランスを確認する
-				/ = link_to data_diary_path do
-					= image_tag "data.jpg", width: "95%"
+				
 
-		.col-md-9.text-monospace
-			#calendar.p-md-3
+		.col-md-9
+			#calendar.p-2

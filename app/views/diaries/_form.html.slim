@@ -1,62 +1,58 @@
-	= form_with model: @diary, local: true do |f|
-			= f.hidden_field :date, value: @diary.date
-			.col-md-1
-			.col-md-10
-				- if @diary.errors.any?
-				#error_explanation
-						h2 = "#{pluralize(@diary.errors.count, "error")} prohibited this diary from being saved:"
-						ul
-						- @diary.errors.full_messages.each do |message|
-								li = message
-			.col-md-12
-				.row
-					- Category.all.each do |c|
-						.col-md-2.mb-4
-							.card.img-thumbnail
-								.card-img-top
-									= image_tag c.image, width: "100%"
-								.card-body
-									.card-text.text-center
-										= f.check_box :category_ids, {multiple: true}, c.id, nil
-										= c.name
-			br
-				.row
-					.col-md-4
-						.form-group.p-md-4
-							.File
-								= f.label :朝ごはん
-							.file.form-control-file
-								= f.file_field :b_image
-					.col-md-4
-						.form-group.p-md-4
-							.File
-								= f.label :昼ごはん
-							.file.form-control-file
-								= f.file_field :l_image
-					.col-md-4
-						.form-group.p-md-4
-							.File
-								= f.label :晩ごはん
-							.file.form-control-file
-								= f.file_field :d_image
-				
-				.row
-					.col-md-3
-						.form-group.ml-4
-  						label[for="Input"]
-    						| 体重
-    					.d-flex.flex-row(style="width:80%")
-  							input#Input.form-control[type="text" placeholder=""]
-  								p kg
-	  			.row.mb-4
-	  				.col-md-6			
-						.form-group.ml-4
-  						label[for="Input"]
-    						| MEMO
-    					input#Input.form-control[type="text" placeholder="今日の食事について振り返りましょう☺"]
+= form_with model: @diary, local: true do |f|
+	= f.hidden_field :date, value: @diary.date
+	- if @diary.errors.any?
+		#error_explanation
+			h2 = "#{pluralize(@diary.errors.count, "error")} prohibited this diary from being saved:"
+			ul
+			- @diary.errors.full_messages.each do |message|
+					li = message
+	.row.mb-4
+		- Category.all.each do |c|
+			.col-md-2.col-6.mb-4
+				.card.img-thumbnail(style="height:100%")
+					.card-img-top
+						= image_tag c.image, width: "100%"
+					.card-body
+						.card-text.text-center.font-weight-bold
+							= f.check_box :category_ids, {multiple: true}, c.id, nil
+							= c.name
+	.row.mb-4
+		.col-md-4
+			.form-group
+				.File
+					= f.label :朝ごはん, class: "font-weight-bold"
+				.file.form-control-file
+					= f.file_field :b_image
+					- if @diary.b_image.attached?
+      					= image_tag @diary.b_image, width: "100%", class: "p-2"
+		.col-md-4
+			.form-group
+				.File
+					= f.label :昼ごはん, class: "font-weight-bold"
+				.file.form-control-file
+					= f.file_field :l_image
+					- if @diary.l_image.attached?
+      					= image_tag @diary.l_image, width: "100%", class: "p-2"
+		.col-md-4
+			.form-group
+				.File
+					= f.label :晩ごはん, class: "font-weight-bold"
+				.file.form-control-file
+					= f.file_field :d_image
+					- if @diary.d_image.attached?
+      					= image_tag @diary.d_image, width: "100%", class: "p-2"
+	
+	.row.mb-4
+		.col-md-4
+			.form-group
+				= f.label :体重, class: "font-weight-bold"
+				= f.number_field :weight, min: 0, class: "form-control", placeholder: "体重を入力してください"
+		.col-md-8
+			.form-group
+				= f.label :MEMO, class: "font-weight-bold"
+				= f.text_area :memo, class: "form-control", placeholder: "今日のコメントを残しましょう", rows: 3
+	.row.mt-4.p-md-2
+		.col-md-12.text-center
+			= f.submit '記録', class: "btn-flat-logo"
 
-	    		.row.mt-2
-	    			.col-md-4
-	    			.col-md-4
-	    				.text-md-center
-								.actions = f.submit
+						

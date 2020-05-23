@@ -1,17 +1,25 @@
-h3 User Info
+.container
+	.row
+	br
+	br
+    	.col-md-6.offset-md-3.my-auto
+			= form_for(@user) do |f|
+				#form-group.mb-4
+					= f.label :Name
+					= f.text_field :name, class: "form-control mb-2"
+				#form-group
+					= f.label :Introduction
+					#form-control.mb-4
+						= f.text_area :introduction, class: "form-control mb-2"
+			
+				.form-group.text-center.mt-4.mb-4
+					br
+					= f.submit '更新', class: "btn btn-outline-info mr-4 w-25"
 
-= form_for(@user) do |f| 
-    #form-group
-        = f.label :Name
-        #form-control
-        	= f.text_field :name
-    #form-group
-        = f.label :Introduction
-        #form-control
-        	= f.text_area :introduction
-    .form-group
-        	= f.submit 'Update User'
-
-= link_to "退会する", confirm_user_path(@user)
-
-= link_to '戻る', user_path
+					= link_to "退会", confirm_user_path(@user), class: "btn btn-outline-danger w-25"
+					br
+					br
+					br
+					br
+				.text-light.mb-4
+					= link_to '戻る', user_path
