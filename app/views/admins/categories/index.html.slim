@@ -1,28 +1,70 @@
-p#notice = notice
-h4 食品目一覧
+.container-fluid.mt-4
+  .card.shadow.mb-4
+    .card-header.py-3
+      h6.m-0.font-weight-bold.text-primary
+        | Categories
+    .card-body
+      .table-responsive
+        table#dataTable.table.table-bordered[width="100%" cellspacing="0"]
+          thead
+            tr
+              th
+                | Image
+              th
+                | ID
+              th
+                | Name
+              th
+                | 食品群
+              th
+                | 栄養
+              th
+                |
+              th
+                |
+          tbody
+            - @categories.each do |category|
+              tr
+                td(style="width:100px")
+                  = image_tag category.image, width: "100%"
+                td = category.id
+                td = category.name
+                td = category.food_group
+                td = category.nutrition_type
+                td = link_to 'Edit', edit_admins_category_path(category)
+                td = link_to 'Destroy', category, data: { confirm: 'Are you sure?' }, method: :delete
 
-table
-  thead
-    tr
-      th 画像
-      th ID
-      th 品目名
-      th 食品群
-      th 栄養
-      th
-      th
+  .row.mb-4
+    .col-md-12.text-center
+      = link_to 'New Category', new_admins_category_path, class: "btn page-link text-dark d-inline-block"
 
-  tbody
-    - @categories.each do |category|
-      tr
-        td = image_tag category.image, width: "10%"
-        td = category.id
-        td = category.name
-        td = category.food_group
-        td = category.nutrition_type
-        td = link_to 'Edit', edit_admins_category_path(category)
-        td = link_to 'Destroy', category, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
 
-= link_to '食品目 作成', new_admins_category_path
+/ p#notice = notice
+/ h4 食品目一覧
+
+/ table
+/   thead
+/     tr
+/       th 画像
+/       th ID
+/       th 品目名
+/       th 食品群
+/       th 栄養
+/       th
+/       th
+
+/   tbody
+/     - @categories.each do |category|
+/       tr
+/         td = image_tag category.image, width: "10%"
+/         td = category.id
+/         td = category.name
+/         td = category.food_group
+/         td = category.nutrition_type
+/         td = link_to 'Edit', edit_admins_category_path(category)
+/         td = link_to 'Destroy', category, data: { confirm: 'Are you sure?' }, method: :delete
+
+/ br
+
+/ = link_to '食品目 作成', new_admins_category_path
