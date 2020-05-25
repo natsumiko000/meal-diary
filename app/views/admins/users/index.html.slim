@@ -1,20 +1,27 @@
-h1 会員一覧
+.container-fluid.mt-4
+	.card.shadow.mb-4
+		.card-header.py-3
+			h6.m-0.font-weight-bold.text-primary
+				| Users
+		.card-body
+			.table-responsive
+				table#dataTable.table.table-bordered[width="100%" cellspacing="0"]
+					thead
+						tr
+							th
+								| ID
+							th
+								| Name
+							th
+								| Mail
+							th
+								| Status
+					tbody
+						- @users.each do |user|
+							tr
+								td = user.id
+								td = user.name
+								td = user.email
+								td = user.status    
 
-table
-  thead
-    tr
-      th ID
-      th Name
-      th Mail
-      th status
-
-  tbody
-    - @users.each do |user|
-      tr
-        td = user.id
-        td = user.name
-        td = user.email
-        td = user.status
-
-br
 

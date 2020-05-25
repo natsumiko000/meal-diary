@@ -1,26 +1,63 @@
-p#notice = notice
-h4 食品一覧
+.container-fluid.mt-4
+  .card.shadow.mb-4
+    .card-header.py-3
+      h6.m-0.font-weight-bold.text-primary
+        | Foods
+    .card-body
+      .table-responsive
+        table#dataTable.table.table-bordered[width="100%" cellspacing="0"]
+          thead
+            tr
+              th
+                | ID
+              th
+                | Name
+              th
+                | 品目名
+              th
+                | カロリー目安
+              th
+                |
+              th
+                |
+          tbody
+            - @foods.each do |food|
+              tr
+                td = food.id
+                td = food.name
+                td = food.category.name
+                td = food.caption
+                td = link_to '編集', edit_admins_food_path(food)
+                td = link_to '削除', food, data: { confirm: '本当に削除しますか？' }, method: :delete
+  .row.mb-4
+    .col-md-12.text-center
+      = link_to '新規登録', new_admins_food_path, class: "btn page-link text-dark d-inline-block"
 
-table
-  thead
-    tr
-      th ID
-      th Name
-      th Category
-      th Caption
-      th
-      th
 
-  tbody
-    - @foods.each do |food|
-      tr
-        td = food.id
-        td = food.name
-        td = food.category.name
-        td = food.caption
-        td = link_to 'Edit', edit_admins_food_path(food)
-        td = link_to 'Destroy', food, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
+/ p#notice = notice
+/ h4 食品一覧
 
-= link_to 'New Food', new_admins_food_path
+/ table
+/   thead
+/     tr
+/       th ID
+/       th Name
+/       th Category
+/       th Caption
+/       th
+/       th
+
+/   tbody
+/     - @foods.each do |food|
+/       tr
+/         td = food.id
+/         td = food.name
+/         td = food.category.name
+/         td = food.caption
+/         td = link_to 'Edit', edit_admins_food_path(food)
+/         td = link_to 'Destroy', food, data: { confirm: 'Are you sure?' }, method: :delete
+
+/ br
+
+/ = link_to 'New Food', new_admins_food_path
