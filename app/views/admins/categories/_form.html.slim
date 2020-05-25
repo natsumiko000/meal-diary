@@ -1,36 +1,28 @@
 = form_for [:admins, @category] do |f|
-  	- if @category.errors.any?
-    #error_explanation
-      	h2 = "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
-      	ul
-        - @category.errors.full_messages.each do |message|
-          	li = message
-    #form-group
-    	= f.label :画像
-    	br
-    	- if @category.image.attached? 
-      		= image_tag @category.image, width: "10%"
-    	#form-control
-    	= f.file_field :image
-    #form-group
-		= f.label :品目名
-		#form-control
-			= f.text_field :name
-	#form-group
-		= f.label :説明
-		#form-control
-			= f.text_area :caption
-	.form-group
-	.row
-	.col-md-5
-	   	= f.label :食品群
-	   	.row.m-b-md
-			= f.select :food_group, Category.food_groups.invert, {}, class: "form-control"
-	.form-group
-	.row
-	.col-md-5
-	   	= f.label :栄養
-	   	.row.m-b-md
-			= f.select :nutrition_type, Category.nutrition_types.invert, {}, class: "form-control"
-
-  	.actions = f.submit
+	- if @category.errors.any?
+	#error_explanation
+		h2 = "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+		ul
+		- @category.errors.full_messages.each do |message|
+			li = message
+	.form-group.mb-4
+		.File
+			= f.label :画像, class: "font-weight-bold"
+		.file.form-control-file
+			= f.file_field :image
+			- if @category.image.attached? 
+				= image_tag @category.image, width: "35%", class: "p-2"
+	.form-group.mb-4
+		= f.label :品目名, class: "font-weight-bold"
+		= f.text_field :name, class: "form-control"
+	.form-group.mb-4
+		= f.label :説明, class: "font-weight-bold"
+		= f.text_area :caption, class: "form-control"
+	.form-group.mb-4
+		= f.label :食品群, class: "font-weight-bold"
+		= f.select :food_group, Category.food_groups.invert, {}, class: "form-control"
+	.form-group.mb-4
+		= f.label :栄養, class: "font-weight-bold"
+		= f.select :nutrition_type, Category.nutrition_types.invert, {}, class: "form-control"
+	.text-center.mb-4
+		.actions = f.submit '登録', class: "btn page-link text-dark d-inline-block w-50"

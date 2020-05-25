@@ -31,12 +31,12 @@
                 td = category.name
                 td = category.food_group
                 td = category.nutrition_type
-                td = link_to 'Edit', edit_admins_category_path(category)
-                td = link_to 'Destroy', category, data: { confirm: 'Are you sure?' }, method: :delete
+                td = link_to '編集', edit_admins_category_path(category)
+                td = link_to '削除', category, data: { confirm: '本当に削除しますか?' }, method: :delete
 
   .row.mb-4
     .col-md-12.text-center
-      = link_to 'New Category', new_admins_category_path, class: "btn page-link text-dark d-inline-block"
+      = link_to '新規登録', new_admins_category_path, class: "btn page-link text-dark d-inline-block"
 
 
 
