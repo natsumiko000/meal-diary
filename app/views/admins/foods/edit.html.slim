@@ -1,8 +1,9 @@
-h1 Editing food
+.container.mb-4
+	.row.mb-4
+		.col-md-8.offset-md-2.my-auto
+			h5.mt-4.mb-4 食品 編集
+			== render 'form'
+			.text-right
+				=< link_to '戻る', admins_foods_path
 
-== render 'form'
-
-=> link_to 'Show', @food
-'|
-=< link_to 'Back', admins_foods_path
 
