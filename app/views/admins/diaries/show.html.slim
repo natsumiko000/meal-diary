@@ -1,6 +1,55 @@
-p#notice = notice
-
-
-=> link_to 'Edit', edit_diary_path(@diary)
-'|
-=< link_to 'Back', admins_diaries_path
+.container.mt-4
+	.row.mt-4
+		h5 ユーザー名：
+		h5 = @diary.user.name
+	.row.mb-4
+		h5.mb-4 = @diary.date
+	.row.mb-4
+		h6.ml-4 取得食品目
+	.row.mb-4
+		- @diary.categories.each do |c|
+			.col-md-2.col-6.mb-4
+				.card.img-thumbnail(style="height:100%")
+					.card-img-top
+						= image_tag c.image, width: "100%"
+					.card-body
+						.card-text.text-center.font-weight-bold
+							= c.name
+	.row.mb-4.p-4
+		.col-md-4
+			h6 朝ごはん
+			- if @diary.b_image.attached?
+				= image_tag @diary.b_image, width: "100%", class: "p-2"
+			-else
+				h6.ml-4 画像登録なし
+  		.col-md-4
+			h6 昼ごはん
+			- if @diary.l_image.attached?
+				= image_tag @diary.l_image, width: "100%", class: "p-2"
+			-else
+				h6.ml-4 画像登録なし
+  		.col-md-4
+			h6 晩ごはん
+			- if @diary.d_image.attached?
+				= image_tag @diary.d_image, width: "100%", class: "p-2"
+			-else
+				h6.ml-4 画像登録なし
+  	.row.mb-4.p-4
+		.col-md-4
+			h6 体重
+			- if @diary.weight.present?
+				h6.ml-4 = @diary.weight
+			-else
+				h6 登録なし
+		.col-md-8
+			h6 MEMO
+			- if @diary.comment.present?
+				h6.ml-4 = @diary.comment
+			-else
+				h6 登録なし
+	.row.mb-4.p-4
+		.col-md-12
+			.text-right
+				=> link_to '編集', edit_admins_diary_path(@diary)
+				'|
+				=< link_to '戻る', admins_diaries_path

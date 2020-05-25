@@ -1,8 +1,14 @@
-h1 Editing diary
-
-== render 'form'
-
-=> link_to 'Show', @diary
-'|
-=< link_to 'Back', admins_diaries_path
+.container
+	.row.mb-4
+		.col-md-8.mt-4
+			p.font-weight-bold = @diary.date.strftime('%Y/%m/%d')
+	.row.mb-4
+		.col-md-12
+			== render 'form'
+	.row.mb-4
+		.col-md-12
+			.text-right
+				=> link_to '削除する', admins_diary_path(@diary), method: :delete
+				'｜
+				=< link_to '戻る', admins_diaries_path
 

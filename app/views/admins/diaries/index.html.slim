@@ -9,7 +9,7 @@
           thead
             tr
               th
-                | Name
+                | User Name
               th
                 | ID
               th
@@ -26,9 +26,6 @@
                 td = diary.user.name
                 td = diary.id
                 td = diary.date
-                td = link_to 'Show', diary    
-                td = link_to 'Edit', edit_diary_path(diary)
-                td = link_to 'Destroy', diary, data: { confirm: 'Are you sure?' }, method: :delete
-  .row.mb-4
-    .col-md-12.text-center
-      = link_to 'New Diary', new_diary_path, class: "btn page-link text-dark d-inline-block"
+                td = link_to '詳細', admins_diary_path(diary) 
+                td = link_to '編集', edit_admins_diary_path(diary)
+                td = link_to '削除', diary, data: { confirm: 'Are you sure?' }, method: :delete
