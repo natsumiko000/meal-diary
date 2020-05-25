@@ -26,9 +26,6 @@
                 td = diary.user.name
                 td = diary.id
                 td = diary.date
-                td = link_to 'Show', diary    
-                td = link_to 'Edit', edit_diary_path(diary)
+                td = link_to 'Show', admins_diary_path(diary) 
+                td = link_to 'Edit', edit_admins_diary_path(diary)
                 td = link_to 'Destroy', diary, data: { confirm: 'Are you sure?' }, method: :delete
-  .row.mb-4
-    .col-md-12.text-center
-      = link_to 'New Diary', new_diary_path, class: "btn page-link text-dark d-inline-block"
