@@ -24,7 +24,7 @@
   font-weight: bold;
   padding: 12px 0 8px;
   text-decoration: none;
-  color: #99CCCC;
+  color: #bcbace;
   transition: .4s;
 }
 
@@ -36,7 +36,7 @@
   top:100%;
   left: 0;
   border-radius: 3px;
-  background:#99CCCC;
+  background: #bcbace;
   transition: .2s;
 }
 
@@ -48,7 +48,7 @@
   top:0;
   left: 0;
   border-radius: 3px;
-  background:#99CCCC;
+  background: #bcbace;
   transition: .2s;
 }
 
@@ -62,10 +62,10 @@
 }
 
 .navbar-brand {
-  background: url("/img/logo.jpg") no-repeat left center;
+  background: url("/img/logo.png") no-repeat left center;
   background-size: contain;
-  height: 70px;
-  width: 160px;
+  height: 90px;
+  width: 270px;
 }
 
 .welcome-section {

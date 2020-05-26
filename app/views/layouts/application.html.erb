@@ -12,18 +12,19 @@
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    	<%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'  %>
 	</head>
 
 	<body>
 		<%= render 'layouts/user_header' %>
 		<%= yield %>
 		<footer class="mt-4">
-			<p class="text-center">
-				<%= link_to 'お問い合わせ', new_inquiry_path %>
+			<p class="text-center mb-4">
+				<%= link_to new_inquiry_path do %>
+					<i class="far fa-envelope"></i>Contact
+				<% end %>
 			</p>
-			<p class="text-right mr-4">
-				Have a nice day ☺ 
-			</p>	
 		</footer>
 	</body>
 </html>
