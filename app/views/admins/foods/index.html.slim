@@ -32,32 +32,3 @@
   .row.mb-4
     .col-md-12.text-center
       = link_to '新規登録', new_admins_food_path, class: "btn page-link text-dark d-inline-block"
-
-
-
-/ p#notice = notice
-/ h4 食品一覧
-
-/ table
-/   thead
-/     tr
-/       th ID
-/       th Name
-/       th Category
-/       th Caption
-/       th
-/       th
-
-/   tbody
-/     - @foods.each do |food|
-/       tr
-/         td = food.id
-/         td = food.name
-/         td = food.category.name
-/         td = food.caption
-/         td = link_to 'Edit', edit_admins_food_path(food)
-/         td = link_to 'Destroy', food, data: { confirm: 'Are you sure?' }, method: :delete
-
-/ br
-
-/ = link_to 'New Food', new_admins_food_path
