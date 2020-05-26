@@ -107,7 +107,7 @@ p 'start categories create'
 ].each do |category|
 	c = Category.find_or_initialize_by(name: category[:name])
 	c.update(category)
-	c.image.attach(io: category[:image], filename: 'test.png')
+	c.image.attach(io: category[:image], filename: "#{category.name}.png")
 end
 
 p 'finish categories create'
