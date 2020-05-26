@@ -4,5 +4,6 @@ class Admins::HomeController < Admins::BaseController
 		@diaries_count = Diary.count
 		@categories_count = Category.count
 		@foods_count = Food.count
+		@inquiries_count = Inquiry.count
 	end
 end

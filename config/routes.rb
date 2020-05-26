@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 		resource :diary_comments, only: [:create, :destroy]
 	end
 	resources :categories, only: [:index, :show]
-	resources :inquiries
+	resources :inquiries, only: [:new, :create]
 
 	namespace :admins do
 		get 'home/top'
