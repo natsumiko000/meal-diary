@@ -19,8 +19,8 @@
 	<body>
 		<%= render 'layouts/user_header' %>
 		<%= yield %>
-		<footer class="mt-4">
-			<p class="text-center mb-4">
+		<footer class="fixed-bottom mt-4">
+			<p class="text-right mb-2 mr-4">
 				<%= link_to new_inquiry_path do %>
 					<i class="far fa-envelope"></i>Contact
 				<% end %>

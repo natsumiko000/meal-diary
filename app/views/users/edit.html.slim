@@ -10,7 +10,7 @@
 				#form-group
 					= f.label :Introduction
 					#form-control.mb-4
-						= f.text_area :introduction, class: "form-control mb-2"
+						= f.text_area :introduction, class: "form-control mb-2", placeholder: "目標など入力してみましょう"
 			
 				.form-group.text-center.mt-4.mb-4
 					br
@@ -21,5 +21,5 @@
 					br
 					br
 					br
-				.text-light.mb-4
+				.text-right.mb-4
 					= link_to '戻る', user_path
