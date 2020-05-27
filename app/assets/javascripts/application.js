@@ -46,7 +46,7 @@ $(function () {
     });
 });
 
-$(function() {
+$(document).on("ready turbolinks:load",function() {
     $('.a').slick({
         dots: true,
         autoplay: true,
