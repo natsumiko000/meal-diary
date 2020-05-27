@@ -1,35 +1,33 @@
-<header class="sticky-top">
-	<nav class="navbar navbar-expand-lg navbar-light bg-white mb-4">
-		<a class="navbar-brand" href="/"></a>
-		<button aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarNavDropdown' data-toggle='collapse' type='button'>
-			<span class='navbar-toggler-icon'></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<% if user_signed_in? %>
-				<ul class='navbar-nav nav ml-auto'>
-					<li class="nav-item m-md-3">
-						<%= link_to 'About', home_about_path, class: "nav-link" %>
-					</li>
-					<li class="nav-item m-md-3">
-						<%= link_to 'MyPage', user_path(current_user.id), class: "nav-link" %>
-					</li>
-					<li class="nav-item m-md-3">
-						<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
-					</li>
-				</ul>
-			<% else %>
-				<ul class='navbar-nav nav ml-auto'>
-					<li class="nav-item m-md-3">
-						<%= link_to 'About', home_about_path, class: "nav-link" %>
-					</li>
-					<li class="nav-item m-md-3">
-						<%= link_to 'Sign up', new_user_registration_path, class: "nav-link" %>
-					</li>
-					<li class="nav-item m-md-3">
-						<%= link_to 'Login', new_user_session_path, class: "nav-link" %>
-					</li>
-				</ul>
-			<% end %>
-		</div>
-	</nav>
-</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-white mb-4">
+  <a class="navbar-brand" href="/"></a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="ナビゲーションの切替">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+  	<% if user_signed_in? %>
+			<ul class='navbar-nav nav ml-auto'>
+				<li class="nav-item m-md-3">
+					<%= link_to 'About', home_about_path, class: "nav-link" %>
+				</li>
+				<li class="nav-item m-md-3">
+					<%= link_to 'MyPage', user_path(current_user.id), class: "nav-link" %>
+				</li>
+				<li class="nav-item m-md-3">
+					<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+				</li>
+			</ul>
+		<% else %>
+			<ul class='navbar-nav nav ml-auto'>
+				<li class="nav-item m-md-3">
+					<%= link_to 'About', home_about_path, class: "nav-link" %>
+				</li>
+				<li class="nav-item m-md-3">
+					<%= link_to 'Sign up', new_user_registration_path, class: "nav-link" %>
+				</li>
+				<li class="nav-item m-md-3">
+					<%= link_to 'Login', new_user_session_path, class: "nav-link" %>
+				</li>
+			</ul>
+		<% end %>
+  </div>
+</nav>
