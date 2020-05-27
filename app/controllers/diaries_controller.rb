@@ -2,18 +2,6 @@ class DiariesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_diary, only: [:show, :edit, :update, :destroy, :data]
 
-	# GET /diaries
-	# GET /diaries.json
-	def index
-		@diaries = current_user.diaries
-		render 'index', formats: 'json', handlers: 'jbuilder'
-	end
-
-	# GET /diaries/1
-	# GET /diaries/1.json
-	def show
-	end
-
 	def record
 		date = params[:date]
 		@diary = current_user.diaries.find_or_initialize_by(date: date)
@@ -24,25 +12,6 @@ class DiariesController < ApplicationController
 		end
 	end
 
-	# GET /diaries/new
-	# def new
-	# 	date = params[:date]
-	# 	if @diary = current_user.diaries.find_by(date: date)
-	# 		redirect_to edit_diary_path(@diary)
-	# 	else
-	# 		@diary = current_user.diaries.new(date: date)
-	# 	end
-	# end
-
-	# # GET /diaries/1/edit
-	# def edit
-	# 	diary = Diary.find_by(id: params[:id])
-	# 	if diary.user == current_user
-	# 		@diary = diary
-	# 	else
-	# 		redirect_to user_path(current_user)
-	# 	end
-	# end
 
 	# POST /diaries
 	# POST /diaries.json
