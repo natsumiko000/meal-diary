@@ -23,7 +23,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require Chart.min
-//
+//= require toastr
 
 $(function () {
     function eventCalendar() {
