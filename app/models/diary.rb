@@ -8,6 +8,7 @@ class Diary < ApplicationRecord
 	has_one_attached :d_image
 
 	validates :user_id, :status, presence: true
+	validates :categories, presence: true
 	enum status: {active:0, closed:1}
 
 end

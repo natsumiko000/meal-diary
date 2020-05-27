@@ -49,9 +49,9 @@ class DiariesController < ApplicationController
 	def create
 		@diary = current_user.diaries.new(diary_params)
 		if @diary.save
-			redirect_to current_user, notice: 'Diary was successfully created.' 
+			redirect_to current_user, notice: '登録が完了しました' 
 		else
-			render :new
+			redirect_back(fallback_location: root_path, notice: @diary.errors.full_messages.join(", "))
 		end
 	end
 
@@ -60,7 +60,7 @@ class DiariesController < ApplicationController
 	def update
 		respond_to do |format|
 			if @diary.update(diary_params)
-				format.html { redirect_to current_user, notice: 'Diary was successfully updated.' }
+				format.html { redirect_to current_user, notice: '上書きが完了しました' }
 				format.json { render :show, status: :ok, location: @diary }
 			else
 				format.html { render :edit }
