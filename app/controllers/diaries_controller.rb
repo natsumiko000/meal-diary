@@ -2,6 +2,11 @@ class DiariesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_diary, only: [:show, :edit, :update, :destroy, :data]
 
+	def index
+		@diaries = current_user.diaries
+		render 'index', formats: 'json', handlers: 'jbuilder'
+	end
+
 	def record
 		date = params[:date]
 		@diary = current_user.diaries.find_or_initialize_by(date: date)

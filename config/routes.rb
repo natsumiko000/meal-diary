@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 			get 'confirm'
 		end
 	end
-	resources :diaries, only: [:create, :update, :destroy] do
+	resources :diaries, only: [:index, :create, :update, :destroy] do
 		member do
 			get 'data'
 		end
