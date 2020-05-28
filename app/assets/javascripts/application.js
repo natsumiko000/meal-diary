@@ -41,9 +41,10 @@ $(function () {
 	function clearCalendar() {
 		$('#calendar').html('');
 	};
-	$(document).on('turbolinks:load', function () {
+	$(document).on("ready turbolinks:load",function() {
 		eventCalendar();
 	});
+	$(document).on('turbolinks:before-cache', clearCalendar);
 });
 
 $(document).on("ready turbolinks:load",function() {

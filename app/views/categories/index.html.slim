@@ -6,46 +6,49 @@
 			.type_body.mb-4
 				h5.p-2.font-weight-bold 身体をつくる食品
 			.row
-				- @b.each do |c|
+				- @body_categories.each do |c|
 					.col-md-2.col-6.mb-4
-						.card.img-thumbnail(style="height:100%")
-							.card-img-top
-								= image_tag c.image, width: "100%"
-							.card-body
-								.card-title.text-center.font-weight-bold
-									= link_to c.name, category_path(c)
-								.card-text.text-center
-									= c.food_group_i18n
+						= link_to category_path(c) do
+							.card.img-thumbnail(style="height:100%")
+								.card-img-top
+									= image_tag c.image, width: "100%"
+								.card-body
+									.card-title.text-center.font-weight-bold
+										= c.name
+									.card-text.text-center
+										= c.food_group_i18n
 	.row.mb-4
 		.col-md-12
 			.type_arrange.mb-4
 				h5.p-2.font-weight-bold 身体の調子を整える食品
 			.row
-				- @a.each do |c|
+				- @arange_categories.each do |c|
 					.col-md-2.col-6.mb-4
-						.card.img-thumbnail(style="height:100%")
-							.card-img-top
-								= image_tag c.image, width: "100%"
-							.card-body
-								.card-title.text-center.font-weight-bold
-									= link_to c.name, category_path(c)
-								.card-text.text-center
-									= c.food_group_i18n
+						= link_to category_path(c) do
+							.card.img-thumbnail(style="height:100%")
+								.card-img-top
+									= image_tag c.image, width: "100%"
+								.card-body
+									.card-title.text-center.font-weight-bold
+										= c.name
+									.card-text.text-center
+										= c.food_group_i18n
 	.row.mb-4
 		.col-md-12
 			.type_energy.mb-4
 				h5.p-2.font-weight-bold 身体のエネルギーとなる食品
 			.row
-				- @e.each do |c|
+				- @energy_categories.each do |c|
 					.col-md-2.col-6.mb-4
-						.card.img-thumbnail(style="height:100%")
-							.card-img-top
-								= image_tag c.image, width: "100%"
-							.card-body
-								.card-title.text-center.font-weight-bold
-									= link_to c.name, category_path(c)
-								.card-text.text-center
-									= c.food_group_i18n
+						= link_to category_path(c) do
+							.card.img-thumbnail(style="height:100%")
+								.card-img-top
+									= image_tag c.image, width: "100%"
+								.card-body
+									.card-title.text-center.font-weight-bold
+										= c.name
+									.card-text.text-center
+										= c.food_group_i18n
 	.row.mb-4
 		.col-md-12
 			.text-right
