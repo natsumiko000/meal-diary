@@ -10,5 +10,4 @@ class Diary < ApplicationRecord
 	validates :user_id, :status, presence: true
 	validates :categories, presence: true
 	enum status: {active:0, closed:1}
-
 end
