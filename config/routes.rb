@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 			get 'confirm'
 		end
 	end
-	resources :diaries, only: [:create, :update, :destroy] do
+	resources :diaries, only: [:index, :create, :update, :destroy] do
 		member do
 			get 'data'
 		end
@@ -33,9 +33,9 @@ Rails.application.routes.draw do
 	namespace :admins do
 		get 'home/top'
 		resources :users, only: [:index]
-		resources :foods[:index, :new, :create, :edit, :update, :destroy]
-		resources :diaries[:index, :show, :edit, :update, :destroy]
-		resources :categories[:index, :new, :create, :edit, :update, :destroy]
-		resources :inquiries[:index, :show, :destroy]
+		resources :foods, only: [:index, :new, :create, :edit, :update, :destroy]
+		resources :diaries, only: [:index, :show, :edit, :update, :destroy]
+		resources :categories, only: [:index, :new, :create, :edit, :update, :destroy]
+		resources :inquiries, only: [:index, :show, :destroy]
 	end
 end
