@@ -4,15 +4,15 @@
 		.col-md-3.p-4
 			table.table.table-hover(style="width:100%")
 					tr
-						th Name
+						th ユーザー名
 						td = @user.name
 					tr
-						th  Introduction
+						th  紹介
 						td = @user.introduction
 					tr
 			.text-md-center
 				.btn.page-link.text-dark.d-inline-block.mb-4(style="width:100%")
-					= link_to 'Edit User Info', edit_user_path(@user)
+					= link_to 'ユーザー情報変更', edit_user_path(@user)
 				
 
 		.col-md-9
