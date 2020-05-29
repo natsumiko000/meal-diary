@@ -15,10 +15,10 @@ class Admins::InquiriesController < Admins::BaseController
 	# DELETE /inquiries/1
 	# DELETE /inquiries/1.json
 	def destroy
-		@inquiry.destroy
-		respond_to do |format|
-			format.html { redirect_to inquiries_url, notice: 'Inquiry was successfully destroyed.' }
-			format.json { head :no_content }
+		if @inquiry.destroy
+			redirect_to inquiries_url, notice: 'お問い合わせを削除しました。' 
+		else
+			redirect_back(fallback_location: root_path, alert: @inquiry.errors.full_messages.join(", "))
 		end
 	end
 
