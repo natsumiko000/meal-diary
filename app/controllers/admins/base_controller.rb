@@ -1,5 +1,4 @@
 class Admins::BaseController < ApplicationController
-  add_flash_types :success, :info, :warning, :danger
   before_action :admin_user
   layout 'admin'
 
