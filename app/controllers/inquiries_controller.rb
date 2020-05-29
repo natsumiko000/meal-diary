@@ -9,14 +9,11 @@ class InquiriesController < ApplicationController
 	# POST /inquiries.json
 	def create
 		@inquiry = Inquiry.new(inquiry_params)
-
-		respond_to do |format|
-			if @inquiry.save
-				InquiryMailer.send_mail(@inquiry).deliver_now
-				format.html { redirect_to root_path, notice: 'お問い合わせを作成しました' }
-			else
-				redirect_back(fallback_location: root_path, error: @inquiry.errors.full_messages.join(", "))
-			end
+		if @inquiry.save
+			InquiryMailer.send_mail(@inquiry).deliver_now
+			redirect_to root_path, notice: 'お問い合わせが送信されました。' 
+		else
+			redirect_back(fallback_location: root_path, error: @inquiry.errors.full_messages.join(", "))
 		end
 	end
 

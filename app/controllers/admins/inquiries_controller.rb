@@ -16,7 +16,7 @@ class Admins::InquiriesController < Admins::BaseController
 	# DELETE /inquiries/1.json
 	def destroy
 		if @inquiry.destroy
-			redirect_to inquiries_url, notice: 'お問い合わせを削除しました。' 
+			redirect_to admins_inquiries_path, notice: 'お問い合わせを削除しました。' 
 		else
 			redirect_back(fallback_location: root_path, alert: @inquiry.errors.full_messages.join(", "))
 		end
