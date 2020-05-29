@@ -25,21 +25,17 @@ class DiariesController < ApplicationController
 		if @diary.save
 			redirect_to current_user, notice: '登録が完了しました' 
 		else
-			redirect_back(fallback_location: root_path, notice: @diary.errors.full_messages.join(", "))
+			redirect_back(fallback_location: root_path, alert: @diary.errors.full_messages.join(", "))
 		end
 	end
 
 	# PATCH/PUT /diaries/1
 	# PATCH/PUT /diaries/1.json
 	def update
-		respond_to do |format|
-			if @diary.update(diary_params)
-				format.html { redirect_to current_user, notice: '上書きが完了しました' }
-				format.json { render :show, status: :ok, location: @diary }
-			else
-				format.html { render :edit }
-				format.json { render json: @diary.errors, status: :unprocessable_entity }
-			end
+		if @diary.update(diary_params)
+			redirect_to current_user, notice: '上書きが完了しました' 
+		else
+			redirect_back(fallback_location: root_path, alert: @diary.errors.full_messages.join(", "))
 		end
 	end
 
@@ -48,21 +44,20 @@ class DiariesController < ApplicationController
 	def destroy
 		respond_to do |format|
 			if @diary.destroy
-				format.html { redirect_to current_user, notice: 'Diary was successfully destroyed.' }
+				format.html { redirect_to current_user, notice: '削除しました。' }
 				format.json { head :no_content }
 			else
-				redirect_to current_user
+				redirect_back(fallback_location: root_path, alert: @diary.errors.full_messages.join(", "))
 			end
 		end
 	end
 
 	def data
 		to  = @diary.date.at_end_of_day
-		from = 1.week.ago(to).at_end_of_day
-
-		category_diaries_hash = 
+		from = 6.days.ago(to).at_beginning_of_day
+		category_diaries_hash =
 			current_user.diaries
-				.where(created_at: from..to).map{|t|t.categories}
+				.where(date: from..to).map{|t|t.categories}
 				.flatten.group_by(&:name)
 				.map {|k, v| [k, v.size] }.to_h
 

@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
 	end
 
 	def after_sign_in_path_for(resource)
-	  	case resource
-	   	when User
-	    	root_path
-	   	when Admin
-	     	admins_home_top_path
-	    end
+		case resource
+		when User
+			root_path
+		when Admin
+			admins_home_top_path
+		end
 	end
 end

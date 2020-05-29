@@ -1,10 +1,17 @@
 ja:
-	enums:
-		category:
-			food_group:
-				first_group: 第1群
-				second_group: 第2群
-				third_group: 第3群
-				fourth_group: 第4群
-				fifth_group: 第5群
-				sixth_group: 第6群
+  activerecord:
+    models:
+      category: カテゴリー
+  enums:
+    category:
+      food_group:
+        first_group: 第1群
+        second_group: 第2群
+        third_group: 第3群
+        fourth_group: 第4群
+        fifth_group: 第5群
+        sixth_group: 第6群
+      nutrition_type:
+        body: 体をつくる
+        arrange: 体を整える
+        energy: 体のエネルギーになる

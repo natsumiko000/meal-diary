@@ -1,5 +1,6 @@
 json.array!(@diaries) do |diary|
-  json.title '入力済み'
-  json.start diary.date.strftime("20%y-%m-%dT10:00:00")
-  json.end diary.date.strftime("20%y-%m-%dT12:00:00")
+  json.start diary.date.strftime("20%y-%m-%d")
+  json.end diary.date.strftime("20%y-%m-%d")
+  json.color '#819d9c'
+  json.rendering 'background'
 end

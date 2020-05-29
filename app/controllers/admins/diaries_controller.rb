@@ -12,29 +12,8 @@ class Admins::DiariesController < Admins::BaseController
   def show
   end
 
-  # GET /diaries/new
-  def new
-    @diary = Diary.new
-  end
-
   # GET /diaries/1/edit
   def edit
-  end
-
-  # POST /diaries
-  # POST /diaries.json
-  def create
-    @diary = Diary.new(diary_params)
-
-    respond_to do |format|
-      if @diary.save
-        format.html { redirect_to @diary, notice: 'Diary was successfully created.' }
-        format.json { render :show, status: :created, location: @diary }
-      else
-        format.html { render :new }
-        format.json { render json: @diary.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /diaries/1
@@ -42,11 +21,9 @@ class Admins::DiariesController < Admins::BaseController
   def update
     respond_to do |format|
       if @diary.update(diary_params)
-        format.html { redirect_to @diary, notice: 'Diary was successfully updated.' }
-        format.json { render :show, status: :ok, location: @diary }
+        format.html { redirect_to admins_diaries_path, notice: 'Diary was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @diary.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,8 +33,7 @@ class Admins::DiariesController < Admins::BaseController
   def destroy
     @diary.destroy
     respond_to do |format|
-      format.html { redirect_to diaries_url, notice: 'Diary was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to admins_diaries_path, notice: 'Diary was successfully destroyed.' }
     end
   end
 
@@ -69,6 +45,6 @@ class Admins::DiariesController < Admins::BaseController
 
     # Only allow a list of trusted parameters through.
     def diary_params
-      params.fetch(:diary, {})
+      params.require(:diary).permit(:user_id, :b_image, :l_image, :d_image, :date, :weight, :comment, category_ids: [])
     end
 end

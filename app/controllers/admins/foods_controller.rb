@@ -1,15 +1,10 @@
 class Admins::FoodsController < Admins::BaseController
-  before_action :set_food, only: [:show, :edit, :update, :destroy]
+  before_action :set_food, only: [:edit, :update, :destroy]
 
   # GET /foods
   # GET /foods.json
   def index
     @foods = Food.all
-  end
-
-  # GET /foods/1
-  # GET /foods/1.json
-  def show
   end
 
   # GET /foods/new
@@ -69,6 +64,6 @@ class Admins::FoodsController < Admins::BaseController
 
     # Only allow a list of trusted parameters through.
     def food_params
-      params.fetch(:food, {})
+      params.require(:food).permit(:name, :caption, :category_id)
     end
 end
