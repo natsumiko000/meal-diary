@@ -29,10 +29,10 @@
                   = image_tag category.image, width: "100%"
                 td = category.id
                 td = category.name
-                td = category.food_group
-                td = category.nutrition_type
+                td = category.food_group_i18n
+                td = category.nutrition_type_i18n
                 td = link_to '編集', edit_admins_category_path(category)
-                td = link_to '削除', category, data: { confirm: '本当に削除しますか？' }, method: :delete
+                td = link_to '削除', admins_category_path(category), data: { confirm: '本当に削除しますか？' }, method: :delete
 
   .row.mb-4
     .col-md-12.text-center

@@ -23,7 +23,7 @@ class DiariesController < ApplicationController
 	def create
 		@diary = current_user.diaries.new(diary_params)
 		if @diary.save
-			redirect_to current_user, notice: '登録が完了しました' 
+			redirect_to current_user, notice: '登録が完了しました。' 
 		else
 			redirect_back(fallback_location: root_path, alert: @diary.errors.full_messages.join(", "))
 		end
@@ -33,7 +33,7 @@ class DiariesController < ApplicationController
 	# PATCH/PUT /diaries/1.json
 	def update
 		if @diary.update(diary_params)
-			redirect_to current_user, notice: '上書きが完了しました' 
+			redirect_to current_user, notice: '上書きが完了しました。' 
 		else
 			redirect_back(fallback_location: root_path, alert: @diary.errors.full_messages.join(", "))
 		end
@@ -42,13 +42,10 @@ class DiariesController < ApplicationController
 	# DELETE /diaries/1
 	# DELETE /diaries/1.json
 	def destroy
-		respond_to do |format|
-			if @diary.destroy
-				format.html { redirect_to current_user, notice: '削除しました。' }
-				format.json { head :no_content }
-			else
-				redirect_back(fallback_location: root_path, alert: @diary.errors.full_messages.join(", "))
-			end
+		if @diary.destroy
+			redirect_to current_user, notice: '削除しました。' 
+		else
+			redirect_back(fallback_location: root_path, alert: @diary.errors.full_messages.join(", "))
 		end
 	end
 

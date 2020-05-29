@@ -1,10 +1,4 @@
 = form_for [:admins, @category] do |f|
-	- if @category.errors.any?
-	#error_explanation
-		h2 = "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
-		ul
-		- @category.errors.full_messages.each do |message|
-			li = message
 	.form-group.mb-4
 		.File
 			= f.label :画像, class: "font-weight-bold"
@@ -20,9 +14,9 @@
 		= f.text_area :caption, class: "form-control"
 	.form-group.mb-4
 		= f.label :食品群, class: "font-weight-bold"
-		= f.select :food_group, Category.food_groups.invert, {}, class: "form-control"
+		= f.select :food_group, Category.food_groups_i18n.invert, {}, class: "form-control"
 	.form-group.mb-4
 		= f.label :栄養, class: "font-weight-bold"
-		= f.select :nutrition_type, Category.nutrition_types.invert, {}, class: "form-control"
+		= f.select :nutrition_type, Category.nutrition_types_i18n.invert, {}, class: "form-control"
 	.text-center.mb-4
 		.actions = f.submit '登録', class: "btn page-link text-dark d-inline-block w-50"

@@ -20,39 +20,30 @@ class Admins::FoodsController < Admins::BaseController
   # POST /foods.json
   def create
     @food = Food.new(food_params)
-
-    respond_to do |format|
-      if @food.save
-        format.html { redirect_to admins_foods_path, notice: 'Food was successfully created.' }
-        format.json { render :show, status: :created, location: @food }
-      else
-        format.html { render :new }
-        format.json { render json: @food.errors, status: :unprocessable_entity }
-      end
+    if @food.save
+      redirect_to admins_foods_path, notice: '食品を登録しました。' 
+    else
+      redirect_back(fallback_location: root_path, alert: @food.errors.full_messages.join(", "))
     end
   end
 
   # PATCH/PUT /foods/1
   # PATCH/PUT /foods/1.json
   def update
-    respond_to do |format|
-      if @food.update(food_params)
-        format.html { redirect_to admins_foods_path, notice: 'Food was successfully updated.' }
-        format.json { render :show, status: :ok, location: @food }
-      else
-        format.html { render :edit }
-        format.json { render json: @food.errors, status: :unprocessable_entity }
-      end
+    if @food.update(food_params)
+      redirect_to admins_foods_path, notice: '食品の上書きが完了しました。' 
+    else
+      redirect_back(fallback_location: root_path, alert: @food.errors.full_messages.join(", "))
     end
   end
 
   # DELETE /foods/1
   # DELETE /foods/1.json
   def destroy
-    @food.destroy
-    respond_to do |format|
-      format.html { redirect_to admins_foods_path, notice: 'Food was successfully destroyed.' }
-      format.json { head :no_content }
+    if @food.destroy
+      redirect_to admins_foods_path, notice: '食品目を削除しました。' 
+    else
+      redirect_back(fallback_location: root_path, alert: @food.errors.full_messages.join(", "))
     end
   end
 

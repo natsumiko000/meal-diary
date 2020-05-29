@@ -1,31 +1,31 @@
 .container-fluid.mt-4
-  .card.shadow.mb-4
-    .card-header.py-3
-      h6.m-0.font-weight-bold.text-primary
-        | Diaries
-    .card-body
-      .table-responsive
-        table#dataTable.table.table-bordered[width="100%" cellspacing="0"]
-          thead
-            tr
-              th
-                | User Name
-              th
-                | ID
-              th
-                | Date
-              th
-                | 
-              th
-                |
-              th
-                |
-          tbody
-            - @diaries.each do |diary|
-              tr
-                td = diary.user.name
-                td = diary.id
-                td = diary.date
-                td = link_to '詳細', admins_diary_path(diary) 
-                td = link_to '編集', edit_admins_diary_path(diary)
-                td = link_to '削除', diary, data: { confirm: 'Are you sure?' }, method: :delete
+	.card.shadow.mb-4
+		.card-header.py-3
+			h6.m-0.font-weight-bold.text-primary
+				| Diaries
+		.card-body
+			.table-responsive
+				table#dataTable.table.table-bordered[width="100%" cellspacing="0"]
+					thead
+						tr
+							th
+								| User Name
+							th
+								| ID
+							th
+								| Date
+							th
+								| 
+							th
+								|
+							th
+								|
+					tbody
+						- @diaries.each do |diary|
+							tr
+								td = diary.user.name
+								td = diary.id
+								td = diary.date
+								td = link_to '詳細', admins_diary_path(diary) 
+								td = link_to '編集', edit_admins_diary_path(diary)
+								td = link_to '削除', admins_diary_path(diary), data: { confirm: '本当に削除しますか？' }, method: :delete
