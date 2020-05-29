@@ -1,10 +1,4 @@
 = form_for [:admins, @food] do |f|
-	- if @food.errors.any?
-	#error_explanation
-		h2 = "#{pluralize(@food.errors.count, "error")} prohibited this food from being saved:"
-		ul
-		- @food.errors.full_messages.each do |message|
-			li = message
 	.form-group.mb-4
 		= f.label :食品名, class: "font-weight-bold"
 		= f.text_field :name, class: "form-control"

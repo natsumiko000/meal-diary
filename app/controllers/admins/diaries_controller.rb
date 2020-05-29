@@ -21,7 +21,7 @@ class Admins::DiariesController < Admins::BaseController
   def update
     respond_to do |format|
       if @diary.update(diary_params)
-        format.html { redirect_to admins_diaries_path, notice: 'Diary was successfully updated.' }
+        format.html { redirect_to admins_diaries_path, notice: '上書きが完了しました。' }
       else
         format.html { render :edit }
       end
@@ -33,7 +33,7 @@ class Admins::DiariesController < Admins::BaseController
   def destroy
     @diary.destroy
     respond_to do |format|
-      format.html { redirect_to admins_diaries_path, notice: 'Diary was successfully destroyed.' }
+      format.html { redirect_to admins_diaries_path, notice: '削除しました。' }
     end
   end
 
