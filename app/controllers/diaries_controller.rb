@@ -8,12 +8,11 @@ class DiariesController < ApplicationController
 	end
 
 	def record
-		date = params[:date]
-		@diary = current_user.diaries.find_or_initialize_by(date: date)
+		@diary = current_user.diaries.find_or_initialize_by(date: params[:date])
 		if @diary.new_record?
 			render :new
 		else
-			render :edit				
+			render :edit
 		end
 	end
 
