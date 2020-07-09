@@ -22,7 +22,7 @@ class DiariesController < ApplicationController
 	def create
 		@diary = current_user.diaries.new(diary_params)
 		if @diary.save
-			redirect_to current_user, notice: '登録が完了しました。' 
+			redirect_to current_user, notice: '登録が完了しました。'
 		else
 			redirect_back(fallback_location: root_path, alert: @diary.errors.full_messages.join(", "))
 		end
