@@ -59,15 +59,15 @@ Rails.application.configure do
 	# routes, locales, etc. This feature depends on the listen gem.
 	config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-# Do not dump schema after migrations.
-  config.action_mailer.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    :user_name => ENV["EMAIL"],
-    :password => ENV["EMAIL_PASSWORD"],
-    :domain => ENV["DOMAIN"],
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
+	# Do not dump schema after migrations.
+	config.action_mailer.delivery_method = :smtp
+	ActionMailer::Base.smtp_settings = {
+		:user_name => ENV["EMAIL"],
+		:password => ENV["EMAIL_PASSWORD"],
+		:domain => ENV["DOMAIN"],
+		:address => 'smtp.sendgrid.net',
+		:port => 587,
+		:authentication => :plain,
+		:enable_starttls_auto => true
+	}
 end
