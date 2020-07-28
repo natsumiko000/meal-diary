@@ -53,7 +53,7 @@ $(document).on('turbolinks:load', function () {
 });
 
 $(document).on("ready turbolinks:load",function() {
-	$('.a').slick({
+	$('.top-slider').slick({
 		dots: true,
 		autoplay: true,
 		autoplaySpeed: 2500,
