@@ -42,15 +42,17 @@ class DiariesController < ApplicationController
 	# DELETE /diaries/1.json
 	def destroy
 		if @diary.destroy
-			redirect_to current_user, notice: '削除しました。' 
+			redirect_to current_user, notice: '削除しました。'
 		else
 			redirect_back(fallback_location: root_path, alert: @diary.errors.full_messages.join(", "))
 		end
 	end
 
 	def data
+		#選択した日から1週間前の摂取データを取得
 		to  = @diary.date.at_end_of_day
 		from = 6.days.ago(to).at_beginning_of_day
+		#食品目ごとにデータを取得
 		category_diaries_hash =
 			current_user.diaries
 				.where(date: from..to).map{|t|t.categories}
