@@ -13,13 +13,18 @@
 			br
 			br
 	.row.mb-4
-		.col-md-6
+		.col-md-4
 			.text-center
 				h6 Meal Diaryについて詳しく見る
-				.btn-horizontal-border.mb-4(style="width:50%")
+				.btn-horizontal-border.mb-4(style="width:80%")
 					= link_to "About", home_about_path
-		.col-md-6
+		.col-md-4
 			.text-center
 				h6  Meal Diaryを使ってみる
-				.btn-horizontal-border.mb-4(style="width:50%")
+				.btn-horizontal-border.mb-4(style="width:80%")
 					= link_to "Sign Up", new_user_registration_path
+		.col-md-4
+			.text-center
+				h6.mb-2  Meal Diaryの使い方
+				.btn-horizontal-border.mb-4(style="width:80%")
+					= link_to "How to", home_howto_path
