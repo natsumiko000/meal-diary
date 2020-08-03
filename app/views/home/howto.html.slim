@@ -1,8 +1,32 @@
 .container
 	.row.mb-4
 		.col-md-8.offset-md-2.my-auto
-			h5 Meal Diaryの使い方
+			h4.font-weight-bold Meal Diaryの使い方
 	.row.mb-4
-		.col-md-8.offset-md-2.my-auto
-			h6 STEP 1  マイページへ
-			
+		.col-md-2
+		.col-md-4
+			h5.font-weight-bold.bg-light.my-md-4 １．マイページへ
+			.p-md-5
+				p カレンダーから食事記録をしたい日を選択する
+				p ※ 当日以外も選択可能
+		.col-md-4.my-md-4
+			= image_tag "howto1.jpg", width: "95%"
+	.row.mb-4
+		.col-md-2
+		.col-md-4
+			h5.font-weight-bold.bg-light.my-md-4 ２．食品目を選択　　※入力必須
+			.p-md-5
+				p 12食品目から摂取した食品目にチェックを入れる
+		.col-md-4.my-md-4
+			= image_tag "howto2.jpg", width: "95%"
+	.row.mb-4
+		.col-md-2
+		.col-md-4
+			h5.font-weight-bold.bg-light.my-md-4 ３．食事画像、体重、MEMOの登録
+			.p-md-5
+				p それぞれ必要に応じて登録
+				p こちらの３項目については任意のため登録しなくてもOK！
+				br
+				p 《記録》をクリックすれば完了
+		.col-md-4.my-md-4
+			= image_tag "howto3.jpg", width: "95%"
